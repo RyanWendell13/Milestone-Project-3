@@ -3,12 +3,15 @@ const helmet = require('helmet')
 const cors = require('cors')
 const morgan = require('morgan')
 
+const dataRouter = require('../routes/data')
+
 const server = express()
 server.use(helmet())
 server.use(cors())
 server.use(morgan('dev'))
 server.use(express.json())
 
+server.use('/api/v1/data',dataRouter)
 
 server.get('/', (req, res) => {
     res.status(200).json({
