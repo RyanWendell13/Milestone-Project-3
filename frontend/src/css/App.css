@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+header {
+  display: flex;
+  height: 100px;
+  background-color: cornflowerblue;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+header > * {
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+header #Icon {
+  margin-left: 25px;
+  color: white;
+}
+header #Icon :hover {
+  color: lightgray;
+}
+header #Icon > * {
+  width: 45px;
+  height: 45px;
+}
+
+#Categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 85vh;
+  width: 100vw;
+}
+#Categories #Category {
+  color: white;
+  text-align: center;
+  margin-top: 35px;
+  width: 400px;
+  height: 550px;
+  background-color: cornflowerblue;
+}
+
+#UserPanel {
+  display: flex;
+  background-color: gray;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 250px;
+}
+#UserPanel > * {
+  margin: 25px;
+  color: white;
+}
+#UserPanel h2 {
+  margin-bottom: 20px;
+}
+#UserPanel #Line {
+  width: 1px;
+  background-color: white;
+}
+#UserPanel div > form > :not(#Submit) {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  color: white;
+}
+#UserPanel div > form #Submit {
+  margin-left: 80%;
+}/*# sourceMappingURL=App.css.map */
