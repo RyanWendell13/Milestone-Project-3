@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
 
 
-let r = {
-    title: "Spicy Gluten-Free Chicken and Cheddar Waffles with Blackberry-Maple Syrup",
-    author: "Username",
-    image: "./Bread.jpg",
-    description: "These crispy Cheddar waffles combine with chicken tenders and a spicy blackberry-muddled maple syrup for a sophisticated version of a classic Southern dish that's also gluten free!",
-    ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
-    equipment: ["bowl","oven"],
-    instructions: ["add 3/4 cup of flower", "bake 300F",]
-}
-
-
 function RecipePage(){
+    let r = {
+        title: "Spicy Gluten-Free Chicken and Cheddar Waffles with Blackberry-Maple Syrup",
+        author: "Username",
+        image: "../../Bread.jpg",
+        description: "These crispy Cheddar waffles combine with chicken tenders and a spicy blackberry-muddled maple syrup for a sophisticated version of a classic Southern dish that's also gluten free!",
+        ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
+        equipment: ["bowl","oven"],
+        instructions: ["add 3/4 cup of flower to bowl", "bake 300F",]
+    }
+    
     const [data, setData] = useState(r)
 
     return(
@@ -36,9 +34,10 @@ function RecipePage(){
 function ListIngredients(ingredients){
     return(
         <div id="List">
+            <h3>Ingredients</h3>
             <ul>
                 {ingredients.map(i => {
-                    return (<li>{i}</li>)
+                    return (<p>{i}</p>)
                 })}
             </ul>
         </div>
@@ -48,9 +47,10 @@ function ListIngredients(ingredients){
 function ListEquipment(equipment){
     return(
         <div id="List">
+            <h3>Equipment</h3>
             <ul>
                 {equipment.map(e => {
-                    return (<li>{e}</li>)
+                    return (<p>{e}</p>)
                 })}
             </ul>
         </div>

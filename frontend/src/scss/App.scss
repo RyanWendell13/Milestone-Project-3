@@ -137,6 +137,7 @@ header{
 
 
 #RecipeInfo{
+    text-align: center;
     background-color: cornflowerblue;
     color: set-text-color($primary-color);
     max-width: 800px;
@@ -162,15 +163,18 @@ header{
         font-weight: bold;
     }
     #Description{
-        margin: 20px;
-        width: 500px;
-    }
-    >ul{
-        display: table;
         @include horizontal-margin-center;
-        
-    };
+        max-width: 500px;
+    }
+    #List{
+        display: table;
+        margin: 20px;
+        width: 260px;
+        @include horizontal-margin-center;
+    }
+    
     >#Step{
+        text-align: center;
         margin: 25px;
     }
 
