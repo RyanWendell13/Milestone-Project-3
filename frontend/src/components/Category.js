@@ -18,10 +18,12 @@ function ListRecipes(props){
         <div id="RecipeList">
             {props.recipes.map(r => {
                 return(
-                    <div id="Recipe">
-                        <img src={r.image}/>
-                        <a>{r.title}</a>
-                    </div>
+                    <a href="/recipe/1">
+                        <div id="Recipe">
+                            <img src={r.image}/>
+                            <p>{r.title}</p>
+                        </div>
+                    </a>
                 )
             })}
         </div>

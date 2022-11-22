@@ -73,7 +73,14 @@ header #Icon > * {
   border-top: solid white;
   border-bottom: solid white;
 }
-#Categories #Category #Recipe {
+#Categories #Category #RecipeList > a {
+  text-decoration: none;
+  color: white;
+}
+#Categories #Category #RecipeList > a :hover {
+  filter: brightness(80%);
+}
+#Categories #Category #RecipeList #Recipe {
   overflow-y: hidden;
   width: 125px;
   height: 150px;
@@ -82,7 +89,7 @@ header #Icon > * {
   background-color: cornflowerblue;
   background-color: #89abea;
 }
-#Categories #Category #Recipe > img {
+#Categories #Category #RecipeList #Recipe > img {
   width: 100px;
   height: 100px;
 }
