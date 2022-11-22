@@ -91,6 +91,9 @@ header{
                 margin: 10px;
                 background-color: $primary-color;
                 background-color: #89abea;
+                :hover{
+                    filter: none;
+                }
                 >img{
                     width: 100px;
                     height: 100px;

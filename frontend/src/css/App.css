@@ -89,6 +89,9 @@ header #Icon > * {
   background-color: cornflowerblue;
   background-color: #89abea;
 }
+#Categories #Category #RecipeList #Recipe :hover {
+  filter: none;
+}
 #Categories #Category #RecipeList #Recipe > img {
   width: 100px;
   height: 100px;
