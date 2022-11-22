@@ -97,14 +97,11 @@ header #Icon > * {
 #UserPanel {
   display: flex;
   background-color: gray;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 50%;
-  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  max-width: 720px;
+  min-height: 250px;
 }
 #UserPanel > * {
   margin: 25px;
@@ -125,6 +122,19 @@ header #Icon > * {
 }
 #UserPanel div > form #Submit {
   margin-left: 80%;
+}
+@media screen and (max-width: 800px) {
+  #UserPanel {
+    flex-direction: column;
+    max-width: 320px;
+    min-height: 600px;
+    margin-top: 50px;
+  }
+  #UserPanel #Line {
+    height: 1px;
+    width: auto;
+    background-color: white;
+  }
 }
 
 #RecipeInfo {

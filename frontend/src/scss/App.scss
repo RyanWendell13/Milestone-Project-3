@@ -101,16 +101,13 @@ header{
 }
 
 #UserPanel{
+    
     display: flex;
     background-color:gray;
-    position:fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width:50%;
-    height: 250px;
+    @include horizontal-margin-center;
+    margin-top: 150px;
+    max-width:720px;
+    min-height: 250px;
     >*{
         margin: 25px;
         color: set-text-color(gray);
@@ -133,6 +130,17 @@ header{
           margin-left: 80%;
         }
       }
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        max-width: 320px;
+        min-height: 600px;
+        margin-top: 50px;
+        #Line{
+            height: 1px;
+            width: auto;
+            background-color: $secondary-color;
+        }
+    }
 }
 
 
