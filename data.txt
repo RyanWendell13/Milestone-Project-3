@@ -1,0 +1,20 @@
+User {
+    username:string
+    password:string
+    recipes:RecipeId[]
+}
+
+Category{
+    title: string
+    recipes: RecipeId[]
+}
+
+Recipe{
+    title: string
+    author: UserId
+    image: string
+    ingredients: string[]
+    equipment: string[]
+    intructions: string[]
+    
+}

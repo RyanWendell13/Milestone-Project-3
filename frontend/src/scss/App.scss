@@ -1,0 +1,200 @@
+@import "config";
+@import "utilities";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $secondary-color;
+}
+
+header{
+    display: flex;
+    height: 100px;
+    background-color: $primary-color;
+    justify-content: space-between;
+    vertical-align: middle;
+    >*{
+        color: set-text-color($primary-color);
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+
+    #Icon{
+        margin-left: 25px;
+        color: set-text-color($primary-color);
+        :hover{
+            color: lightgray;
+        }
+        
+        >*{
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+#Categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 85vh;
+    width: 100vw;
+
+    #Category{
+        color: set-text-color($primary-color);
+        margin-top: 35px;
+        width: 400px;
+        height: 550px;
+        background-color: $primary-color;
+        text-align: center;
+        position: relative;
+        >#Icon{
+            position:absolute;
+            right: 10px;
+            top:5px;
+            color: set-text-color($primary-color);
+            :hover{
+                color: lightgray;
+            }
+            vertical-align:sub;
+            >*{
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        #RecipeList{
+            // background-color: $secondary-color;
+            margin: 20px;
+            padding-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height: 85%;
+            justify-content: space-evenly;
+            border-top: solid white ;
+            border-bottom: solid white;
+        }
+        #Recipe{
+            overflow-y:hidden;
+            width:125px;
+            height: 150px;
+            padding: 10px;
+            margin: 10px;
+            background-color: $primary-color;
+            background-color: #89abea;
+            // background-color: rgb(179, 93, 93);
+
+            // color: set-text-color(gray);
+            >img{
+                width: 100px;
+                height: 100px;
+            }
+
+        }
+    }
+}
+
+
+
+
+#UserPanel{
+    display: flex;
+    background-color:gray;
+    position:fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width:50%;
+    height: 250px;
+    >*{
+        margin: 25px;
+        color: set-text-color(gray);
+      }
+    h2{
+        margin-bottom: 20px;
+    }
+    #Line{
+        width: 1px;
+        background-color: $secondary-color;
+    }
+    div>form{
+        >:not(#Submit){
+          margin-bottom: 20px;
+          width: 100%;
+          height: 30px;
+        color: set-text-color(gray);
+        }
+        #Submit{
+          margin-left: 80%;
+        }
+      }
+}
+
+
+#Categories2{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#Category2{
+    position: relative;
+    >#Icon{
+        position:absolute;
+        right: 10px;
+        top:5px;
+        color: set-text-color($primary-color);
+        :hover{
+            color: lightgray;
+        }
+        vertical-align:sub;
+        >*{
+            width: 30px;
+            height: 30px;
+        }
+    }
+    >#Search{
+        position:absolute;
+        right: 50px;
+        top: 13px;
+        font-weight: bold;
+        :hover{
+            color: lightgray;
+        }
+    }
+    background-color: $primary-color;
+    color: set-text-color($primary-color);
+    margin: 20px;
+    width: 425px;
+    text-align: center;
+    height: 250px;
+
+    overflow-y: hidden;
+    #RecipeList2{
+        border-left: solid white ;
+        border-right: solid white;
+        display: flex;
+        overflow-x: scroll;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        
+        #Recipe2{
+            width:300px;
+            height: 150px;
+            padding: 10px;
+            margin: 10px;
+            background-color: #89abea;
+            >img{
+                width: 100px;
+                height:100px;
+            }
+        }
+    }
+    
+}
