@@ -4,10 +4,10 @@ import NavBar from "../components/NavBar"
 
 function RecipePage(){
     let r = {
-        title: "Spicy Gluten-Free Chicken and Cheddar Waffles with Blackberry-Maple Syrup",
+        title: "Bread",
         author: "Username",
         image: "../../Bread.jpg",
-        description: "These crispy Cheddar waffles combine with chicken tenders and a spicy blackberry-muddled maple syrup for a sophisticated version of a classic Southern dish that's also gluten free!",
+        description: "description description description description description description description description description description description description description description description description description description description description description description description description ",
         ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
         equipment: ["bowl","oven"],
         instructions: ["add 3/4 cup of flower to bowl", "bake 300F",]

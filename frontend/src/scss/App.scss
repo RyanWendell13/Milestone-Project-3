@@ -42,6 +42,7 @@ header{
     justify-content: space-evenly;
     height: 85vh;
     width: 100vw;
+    padding-bottom: 50px;
 
     #Category{
         color: set-text-color($primary-color);
@@ -151,15 +152,14 @@ header{
     text-align: center;
     background-color: cornflowerblue;
     color: set-text-color($primary-color);
-    max-width: 800px;
-    margin: 20px;
-
+    max-width: 600px;
+    margin: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
     @include horizontal-margin-center;
     >h2{
         font-size: 2em;
-        margin: 20px;
+        margin: 20px 65px;
     }
 
     >img{

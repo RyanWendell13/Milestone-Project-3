@@ -38,6 +38,7 @@ header #Icon > * {
   justify-content: space-evenly;
   height: 85vh;
   width: 100vw;
+  padding-bottom: 50px;
 }
 #Categories #Category {
   color: white;
@@ -144,8 +145,8 @@ header #Icon > * {
   text-align: center;
   background-color: cornflowerblue;
   color: white;
-  max-width: 800px;
-  margin: 20px;
+  max-width: 600px;
+  margin: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-left: auto;
@@ -153,7 +154,7 @@ header #Icon > * {
 }
 #RecipeInfo > h2 {
   font-size: 2em;
-  margin: 20px;
+  margin: 20px 65px;
 }
 #RecipeInfo > img {
   display: block;
