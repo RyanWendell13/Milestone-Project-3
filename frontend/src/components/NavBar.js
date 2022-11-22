@@ -5,11 +5,11 @@ function NavBar(){
         <header>
             <h1>Recipes</h1>
             <div id="NavIcons">
-                <a id="Icon" href="/">
-                    <House/>
-                </a>
                 <a id="Icon" href="/User">
                     <Person/>
+                </a>
+                <a id="Icon" href="/">
+                    <House/>
                 </a>
             </div>
         </header>

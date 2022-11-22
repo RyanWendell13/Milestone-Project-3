@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import UserView from './views/UserView';
-import BookView from './views/BookView';
-import RecipeView from './views/RecipeView';
-import Error404 from './views/Error404';
+import UserPage from './pages/UserPage';
+import CategoryPage from './pages/CategoryPage';
+import RecipePage from './pages/RecipePage';
+import Error404 from './pages/Error404';
+import CategoryPageTwo from './pages/Category2/CategoryPageTwo';
 
 import './css/App.css';
 
@@ -10,9 +11,10 @@ function App() {
   return (
     <Router>
         <Routes>
-          <Route path='/' element={<BookView/>}/>
-          <Route path='/user' element={<UserView/>}/>
-          <Route path='/recipe' element={<RecipeView/>}/>
+          <Route path='/' element={<CategoryPage/>}/>
+          <Route path='/2' element={<CategoryPageTwo/>}/>
+          <Route path='/user' element={<UserPage/>}/>
+          <Route path='/recipe' element={<RecipePage/>}/>
           <Route path='*' element={<Error404/>}/>
         </Routes>
       </Router>

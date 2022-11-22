@@ -1,7 +1,7 @@
 import React from "react"
 import NavBar from "../components/NavBar"
 
-function UserView(){
+function UserPage(){
     return(
         <>
             <NavBar/>
@@ -38,4 +38,4 @@ function UserView(){
     )
 }
 
-export default UserView
+export default UserPage
