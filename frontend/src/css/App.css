@@ -120,62 +120,40 @@ header #Icon > * {
   margin-left: 80%;
 }
 
-#Categories2 {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-#Category2 {
-  position: relative;
+#RecipeInfo {
   background-color: cornflowerblue;
   color: white;
+  max-width: 800px;
   margin: 20px;
-  width: 425px;
-  text-align: center;
-  height: 250px;
-  overflow-y: hidden;
-}
-#Category2 > #Icon {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  color: white;
-  vertical-align: sub;
-}
-#Category2 > #Icon :hover {
-  color: lightgray;
-}
-#Category2 > #Icon > * {
-  width: 30px;
-  height: 30px;
-}
-#Category2 > #Search {
-  position: absolute;
-  right: 50px;
-  top: 13px;
-  font-weight: bold;
-}
-#Category2 > #Search :hover {
-  color: lightgray;
-}
-#Category2 #RecipeList2 {
-  border-left: solid white;
-  border-right: solid white;
-  display: flex;
-  overflow-x: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
 }
-#Category2 #RecipeList2 #Recipe2 {
+#RecipeInfo > h2 {
+  font-size: 2em;
+  margin: 20px;
+}
+#RecipeInfo > img {
+  display: block;
   width: 300px;
-  height: 150px;
-  padding: 10px;
-  margin: 10px;
-  background-color: #89abea;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
-#Category2 #RecipeList2 #Recipe2 > img {
-  width: 100px;
-  height: 100px;
+#RecipeInfo #Author {
+  margin: 20px;
+  font-weight: bold;
+}
+#RecipeInfo #Description {
+  margin: 20px;
+  width: 500px;
+}
+#RecipeInfo > ul {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+#RecipeInfo > #Step {
+  margin: 25px;
 }/*# sourceMappingURL=App.css.map */

@@ -8,3 +8,8 @@
       @return $text-color;
     }
 }
+
+@mixin horizontal-margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
