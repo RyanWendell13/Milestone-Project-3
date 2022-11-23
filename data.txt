@@ -22,8 +22,12 @@ Recipe{
 
 
 Test Data 
+
+Response from /api/categories
 let Categories = [{title: "Breakfast", recipes: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}, {title: "Lunch", recipes: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}, {title: "Dinner", recipes: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}], 
 
+
+Response from /api/recipes/:id
 let recipe = {
         _id: 0,
         title: "Bread",
