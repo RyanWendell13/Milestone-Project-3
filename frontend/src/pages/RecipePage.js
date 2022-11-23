@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import NavBar from "../components/NavBar"
+import { Dash } from "react-bootstrap-icons"
 
 
 function RecipePage(){
@@ -20,6 +21,9 @@ function RecipePage(){
             <NavBar/>
             <div id="RecipeInfo">
                 <h2>{data.title}</h2>
+                <button id="IconButton">
+                    <Dash/>
+                </button>
                 <p id="Author"> Recipe by {data.author}</p>
                 <p id="Description">{data.description}</p>
                 <img src={data.image}/>

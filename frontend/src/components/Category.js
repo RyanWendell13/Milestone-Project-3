@@ -16,9 +16,9 @@ function Category(props){
 function ListRecipes(props){
     return(
         <div id="RecipeList">
-            {props.recipes.map(r => {
+            {props.recipes.map((r,i) => {
                 return(
-                    <a href="/recipe/1">
+                    <a href="/recipe/1" key={i}>
                         <div id="Recipe">
                             <img src={r.image}/>
                             <p>{r.title}</p>

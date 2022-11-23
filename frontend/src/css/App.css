@@ -79,7 +79,7 @@ header #Icon > * {
   color: white;
 }
 #Categories #Category #RecipeList > a :hover {
-  filter: brightness(80%);
+  filter: brightness(70%);
 }
 #Categories #Category #RecipeList #Recipe {
   overflow-y: hidden;
@@ -141,7 +141,24 @@ header #Icon > * {
   }
 }
 
+#IconButton {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: white;
+}
+#IconButton :hover {
+  color: lightgray;
+}
+#IconButton > * {
+  width: 30px;
+  height: 30px;
+}
+
 #RecipeInfo {
+  position: relative;
   text-align: center;
   background-color: cornflowerblue;
   color: white;
@@ -182,4 +199,11 @@ header #Icon > * {
 #RecipeInfo > #Step {
   text-align: center;
   margin: 25px;
+}
+
+#ListInput {
+  position: relative;
+}
+#ListInput > #IconButton {
+  right: 0;
 }/*# sourceMappingURL=App.css.map */

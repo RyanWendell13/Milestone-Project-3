@@ -18,3 +18,19 @@ Recipe{
     intructions: string[]
     
 }
+
+
+
+Test Data 
+let Categories = [{title: "Breakfast", recipes: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}, {title: "Lunch", recipes: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}, {title: "Dinner", recipes: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}], 
+
+let recipe = {
+        _id: 0,
+        title: "Bread",
+        author: "Username",
+        image: "../../Bread.jpg",
+        description: "description description description description description description description description description description description description description description description description description description description description description description description description ",
+        ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
+        equipment: ["bowl","oven"],
+        instructions: ["add 3/4 cup of flower to bowl", "bake 300F",]
+}

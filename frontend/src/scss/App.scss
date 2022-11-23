@@ -81,7 +81,7 @@ header{
                 text-decoration: none;
                 color: set-text-color($primary-color);
                 :hover{
-                     filter: brightness(80%);
+                     filter: brightness(70%);
                 }
             }
             #Recipe{
@@ -148,7 +148,26 @@ header{
 }
 
 
+#IconButton{
+    background-color: transparent;
+    border: none;
+    position:absolute;
+    right: 10px;
+    top:5px;
+    color: set-text-color($primary-color);
+    :hover{
+        color: lightgray;
+    }
+    >*{
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+
 #RecipeInfo{
+    position: relative;
     text-align: center;
     background-color: cornflowerblue;
     color: set-text-color($primary-color);
@@ -161,6 +180,7 @@ header{
         font-size: 2em;
         margin: 20px 65px;
     }
+    
 
     >img{
         display: block;
@@ -190,3 +210,4 @@ header{
     }
 
 }
+
