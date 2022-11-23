@@ -26,7 +26,7 @@ function RecipePage(){
                 </button>
                 <p id="Author"> Recipe by {data.author}</p>
                 <p id="Description">{data.description}</p>
-                <img src={data.image}/>
+                <img src={data.image} alt={data.title}/>
                 {ListIngredients(data.ingredients)}
                 {ListEquipment(data.equipment)}
                 {ListInstructions(data.instructions)}

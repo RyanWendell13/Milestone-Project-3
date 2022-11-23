@@ -20,7 +20,7 @@ function ListRecipes(props){
                 return(
                     <a href="/recipe/1" key={i}>
                         <div id="Recipe">
-                            <img src={r.image}/>
+                            <img src={r.image} alt={r.title}/>
                             <p>{r.title}</p>
                         </div>
                     </a>
