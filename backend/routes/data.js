@@ -20,7 +20,7 @@ const food = [
 
 router.get('/',async(req,res) =>{
     try{
-        //const foodData = await module.find()
+        const foodData = await module.find()
         await res.status(200).json(food)
     }
     catch(error){
