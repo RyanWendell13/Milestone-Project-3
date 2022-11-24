@@ -1,7 +1,19 @@
 require('dotenv').config()
-require('colors')
-const server = require('./api/server')
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const app = express();
+const cookieSession = require('cookie-session')
 
-const PORT = process.env.PORT || 3000
+app.get('/',(req, res) =>{
+    res.send('Helllo world!')
+})
 
-server.listen(PORT, () => console.log(`\n** server is running on port ${PORT}`.cyan))
+app.get('*', (req, res) => {
+    res.status(404).send('<h1>404 Page</h1>')
+})
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`\n** server is running on port ${process.env.PORT}`)
+})
