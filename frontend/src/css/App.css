@@ -20,6 +20,12 @@ header > * {
   margin-left: 20px;
   margin-right: 30px;
 }
+header #UserText {
+  display: inline-block;
+  margin-left: 25px;
+  color: white;
+  vertical-align: super;
+}
 header #Icon {
   margin-left: 25px;
   color: white;
@@ -199,11 +205,4 @@ header #Icon > * {
 #RecipeInfo > #Step {
   text-align: center;
   margin: 25px;
-}
-
-#ListInput {
-  position: relative;
-}
-#ListInput > #IconButton {
-  right: 0;
 }/*# sourceMappingURL=App.css.map */
