@@ -1,9 +1,12 @@
 require('dotenv').config()
 const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+//const bodyParser = require('body-parser')
+//const cors = require('cors')
 const app = express();
-const cookieSession = require('cookie-session')
+//const cookieSession = require('cookie-session')
+
+app.use('/recipes', require('./api/recipes'))
+
 
 app.get('/',(req, res) =>{
     res.send('Helllo world!')
