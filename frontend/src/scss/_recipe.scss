@@ -1,0 +1,45 @@
+@import "config";
+@import "utilities";
+
+#RecipeInfo{
+    position: relative;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: set-text-color($primary-color);
+    max-width: 600px;
+    margin: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include horizontal-margin-center;
+    >h2{
+        font-size: 2em;
+        margin: 20px 65px;
+    }
+    >img{
+        display: block;
+        width: 300px;
+        margin: 20px;
+        @include horizontal-margin-center;
+
+    }
+    #Author{
+        margin: 20px;
+        font-weight: bold;
+    }
+    #Description{
+        @include horizontal-margin-center;
+        max-width: 500px;
+    }
+    #List{
+        display: table;
+        margin: 20px;
+        width: 260px;
+        @include horizontal-margin-center;
+    }
+    
+    #Step{
+        text-align: center;
+        margin: 25px;
+    }
+
+}
