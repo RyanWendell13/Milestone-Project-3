@@ -85,7 +85,7 @@ header #Icon > * {
   color: white;
 }
 #Categories #Category #RecipeList > a :hover {
-  filter: brightness(70%);
+  filter: brightness(80%);
 }
 #Categories #Category #RecipeList #Recipe {
   overflow-y: hidden;
