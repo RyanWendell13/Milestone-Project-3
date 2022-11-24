@@ -1,0 +1,15 @@
+@import "config";
+
+@function set-text-color($background-color){
+    @if (lightness($background-color) > 70)  {
+      @return black;
+    }
+    @else{
+      @return $text-color;
+    }
+}
+
+@mixin horizontal-margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
