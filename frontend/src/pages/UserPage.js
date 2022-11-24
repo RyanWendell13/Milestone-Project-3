@@ -12,7 +12,7 @@ function UserPage(){
                         <label>Email</label>
                         <input required type="text"/>
                         <label>Password</label>
-                        <input required type="text"/>
+                        <input required type="text" multiple/>
                         <input required type="submit" id="Submit"/>
                         
                     </form>
@@ -30,7 +30,6 @@ function UserPage(){
                         <input required type="text"/>
                         <input required type="submit" id="Submit"/>
                     </form>
-
                 </div>
             </div>
         </>

@@ -16,12 +16,14 @@ function Category(props){
 function ListRecipes(props){
     return(
         <div id="RecipeList">
-            {props.recipes.map(r => {
+            {props.recipes.map((r,i) => {
                 return(
-                    <div id="Recipe">
-                        <img src={r.image}/>
-                        <a>{r.title}</a>
-                    </div>
+                    <a href="/recipe/1" key={i}>
+                        <div id="Recipe">
+                            <img src={r.image} alt={r.title}/>
+                            <p>{r.title}</p>
+                        </div>
+                    </a>
                 )
             })}
         </div>

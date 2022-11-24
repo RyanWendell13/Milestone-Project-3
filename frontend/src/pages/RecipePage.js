@@ -1,21 +1,35 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
+import { Dash } from "react-bootstrap-icons"
+
 
 function RecipePage(){
-    const [data, setData] = useState()
+    let r = {
+        title: "Bread",
+        author: "Username",
+        image: "../../Bread.jpg",
+        description: "description description description description description description description description description description description description description description description description description description description description description description description description ",
+        ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
+        equipment: ["bowl","oven"],
+        instructions: ["add 3/4 cup of flower to bowl", "bake 300F",]
+    }
+    
+    const [data, setData] = useState(r)
 
     return(
         <>
             <NavBar/>
-            <div id="RecipeContainer">
-                <img></img>
-                <div id="RecipeInfo">
-                    <h2>{data.title}.</h2>
-                    <p>{data.description}</p>
-                    {ListIngredients(data.ingredients)}
-                    {ListSteps(data.steps)}
-                </div>
+            <div id="RecipeInfo">
+                <h2>{data.title}</h2>
+                <button id="IconButton">
+                    <Dash/>
+                </button>
+                <p id="Author"> Recipe by {data.author}</p>
+                <p id="Description">{data.description}</p>
+                <img src={data.image} alt={data.title}/>
+                {ListIngredients(data.ingredients)}
+                {ListEquipment(data.equipment)}
+                {ListInstructions(data.instructions)}
             </div>
         </>
     )
@@ -23,21 +37,44 @@ function RecipePage(){
 
 function ListIngredients(ingredients){
     return(
-        <ul>
-            {ingredients.map(i => {
-                return (<li>{ingredients.name + ": " + ingredients.quantity}</li>)
-            })}
-        </ul>
+        <div id="List">
+            <h3>Ingredients</h3>
+            <ul>
+                {ingredients.map(i => {
+                    return (<p>{i}</p>)
+                })}
+            </ul>
+        </div>
+        
+    )
+}
+function ListEquipment(equipment){
+    return(
+        <div id="List">
+            <h3>Equipment</h3>
+            <ul>
+                {equipment.map(e => {
+                    return (<p>{e}</p>)
+                })}
+            </ul>
+        </div>
     )
 }
 
-function ListSteps(steps){
+function ListInstructions(instructions){
+    let count = 0;
     return(
-        <ol>
-            {steps.map(s => {
-                return (<li>{s}</li>)
+        <>
+            {instructions.map(i => {
+                count++
+                return (
+                    <div id="Step">
+                        <h3>{"Step "+ count}</h3>
+                        <p>{i}</p>
+                    </div>
+                )
             })}
-        </ol>
+        </>
     )
 }
 

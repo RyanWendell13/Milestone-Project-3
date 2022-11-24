@@ -22,7 +22,12 @@ header{
         margin-left: 20px;
         margin-right: 30px;
     }
-
+    #UserText{
+        display: inline-block;
+        margin-left: 25px;
+        color: set-text-color($primary-color);
+        vertical-align:super;
+    }
     #Icon{
         margin-left: 25px;
         color: set-text-color($primary-color);
@@ -42,6 +47,7 @@ header{
     justify-content: space-evenly;
     height: 85vh;
     width: 100vw;
+    padding-bottom: 50px;
 
     #Category{
         color: set-text-color($primary-color);
@@ -67,7 +73,6 @@ header{
         }
 
         #RecipeList{
-            // background-color: $secondary-color;
             margin: 20px;
             padding-top: 10px;
             display: flex;
@@ -75,43 +80,43 @@ header{
             overflow-y: auto;
             height: 85%;
             justify-content: space-evenly;
-            border-top: solid white ;
-            border-bottom: solid white;
-        }
-        #Recipe{
-            overflow-y:hidden;
-            width:125px;
-            height: 150px;
-            padding: 10px;
-            margin: 10px;
-            background-color: $primary-color;
-            background-color: #89abea;
-            // background-color: rgb(179, 93, 93);
-
-            // color: set-text-color(gray);
-            >img{
-                width: 100px;
-                height: 100px;
+            border-top: solid $secondary-color ;
+            border-bottom: solid $secondary-color;
+            >a{
+                text-decoration: none;
+                color: set-text-color($primary-color);
+                :hover{
+                     filter: brightness(80%);
+                }
             }
-
+            #Recipe{
+                overflow-y:hidden;
+                width:125px;
+                height: 150px;
+                padding: 10px;
+                margin: 10px;
+                background-color: $primary-color;
+                background-color: #89abea;
+                :hover{
+                    filter: none;
+                }
+                >img{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
         }
     }
 }
 
-
-
-
 #UserPanel{
+    
     display: flex;
     background-color:gray;
-    position:fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width:50%;
-    height: 250px;
+    @include horizontal-margin-center;
+    margin-top: 150px;
+    max-width:720px;
+    min-height: 250px;
     >*{
         margin: 25px;
         color: set-text-color(gray);
@@ -134,67 +139,80 @@ header{
           margin-left: 80%;
         }
       }
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        max-width: 320px;
+        min-height: 600px;
+        margin-top: 50px;
+        #Line{
+            height: 1px;
+            width: auto;
+            background-color: $secondary-color;
+        }
+    }
 }
 
 
-#Categories2{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-#Category2{
-    position: relative;
-    >#Icon{
-        position:absolute;
-        right: 10px;
-        top:5px;
-        color: set-text-color($primary-color);
-        :hover{
-            color: lightgray;
-        }
-        vertical-align:sub;
-        >*{
-            width: 30px;
-            height: 30px;
-        }
-    }
-    >#Search{
-        position:absolute;
-        right: 50px;
-        top: 13px;
-        font-weight: bold;
-        :hover{
-            color: lightgray;
-        }
-    }
-    background-color: $primary-color;
+#IconButton{
+    background-color: transparent;
+    border: none;
+    position:absolute;
+    right: 10px;
+    top:5px;
     color: set-text-color($primary-color);
-    margin: 20px;
-    width: 425px;
-    text-align: center;
-    height: 250px;
+    :hover{
+        color: lightgray;
+    }
+    >*{
+        width: 30px;
+        height: 30px;
+    }
 
-    overflow-y: hidden;
-    #RecipeList2{
-        border-left: solid white ;
-        border-right: solid white;
-        display: flex;
-        overflow-x: scroll;
-        margin-left: auto;
-        margin-right: auto;
-        width: 400px;
-        
-        #Recipe2{
-            width:300px;
-            height: 150px;
-            padding: 10px;
-            margin: 10px;
-            background-color: #89abea;
-            >img{
-                width: 100px;
-                height:100px;
-            }
-        }
+}
+
+
+#RecipeInfo{
+    position: relative;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: set-text-color($primary-color);
+    max-width: 600px;
+    margin: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include horizontal-margin-center;
+    >h2{
+        font-size: 2em;
+        margin: 20px 65px;
     }
     
+
+    >img{
+        display: block;
+        width: 300px;
+        margin: 20px;
+        @include horizontal-margin-center;
+
+    }
+    #Author{
+        margin: 20px;
+        font-weight: bold;
+    }
+    #Description{
+        @include horizontal-margin-center;
+        max-width: 500px;
+    }
+    #List{
+        display: table;
+        margin: 20px;
+        width: 260px;
+        @include horizontal-margin-center;
+    }
+    
+    >#Step{
+        text-align: center;
+        margin: 25px;
+    }
+
 }
+
