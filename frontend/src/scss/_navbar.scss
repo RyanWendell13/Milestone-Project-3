@@ -23,7 +23,7 @@ header{
         margin-left: 25px;
         color: set-text-color($primary-color);
         :hover{
-            color: lightgray;
+            color: $hover-color;
         }
         
         >*{

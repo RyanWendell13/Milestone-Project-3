@@ -9,6 +9,7 @@
     padding-bottom: 50px;
 
     #Category{
+        box-shadow:gray 10px 10px 10px;
         color: set-text-color($primary-color);
         margin-top: 35px;
         width: 400px;
@@ -57,7 +58,7 @@
                 padding: 10px;
                 margin: 10px;
                 background-color: $primary-color;
-                background-color: #89abea;
+                background-color: $tertiary-color;
                 :hover{
                     filter: none;
                 }

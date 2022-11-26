@@ -1,0 +1,65 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 85vh;
+  width: 100vw;
+  padding-bottom: 50px;
+}
+.categories > .category {
+  color: white;
+  margin-top: 35px;
+  width: 400px;
+  height: 550px;
+  background-color: cornflowerblue;
+  text-align: center;
+  position: relative;
+}
+.categories > .category > .icon {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: white;
+  vertical-align: sub;
+}
+.categories > .category > .icon :hover {
+  color: lightgray;
+}
+.categories > .category > .icon > * {
+  width: 30px;
+  height: 30px;
+}
+.categories > .category > .recipeList {
+  margin: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: 85%;
+  justify-content: space-evenly;
+  border-top: solid white;
+  border-bottom: solid white;
+}
+.categories > .category > .recipeList > a {
+  text-decoration: none;
+  color: white;
+}
+.categories > .category > .recipeList > a :hover {
+  filter: brightness(80%);
+}
+.categories > .category > .recipeList > .recipe {
+  overflow-y: hidden;
+  width: 125px;
+  height: 150px;
+  padding: 10px;
+  margin: 10px;
+  background-color: cornflowerblue;
+  background-color: #89abea;
+}
+.categories > .category > .recipeList > .recipe :hover {
+  filter: none;
+}
+.categories > .category > .recipeList > .recipe > img {
+  width: 100px;
+  height: 100px;
+}/*# sourceMappingURL=categories.css.map */

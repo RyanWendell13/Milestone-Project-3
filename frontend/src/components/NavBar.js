@@ -4,6 +4,7 @@ import { CurrentUser } from "../contexts/CurrentUser"
 function NavBar(){
 
     const {currentUser} = useContext(CurrentUser)
+
     function ManageLogin(){
         if (currentUser){
             return(

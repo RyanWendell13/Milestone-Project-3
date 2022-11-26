@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import NavBar from "../components/NavBar"
 import { Dash } from "react-bootstrap-icons"
+import {CurrentUser} from '../contexts/CurrentUser'
 
+function RecipePage({recipe}){
+    const {currentUser} = useContext(CurrentUser)
 
-function RecipePage(){
+    recipe = {author: "1"}
+
     let r = {
         title: "Bread",
         author: "Username",
@@ -16,14 +20,65 @@ function RecipePage(){
     
     const [data, setData] = useState(r)
 
+
+    function DeleteButton(){
+        if(currentUser && currentUser._id === recipe.author){
+            return(
+                <button id="IconButton">
+                    <Dash/>
+                </button>
+            )
+        }
+    }
+    
+    function ListIngredients(ingredients){
+        return(
+            <div id="List">
+                <h3>Ingredients</h3>
+                <ul>
+                    {ingredients.map((i,index )=> {
+                        return (<p key={index}>{i}</p>)
+                    })}
+                </ul>
+            </div>
+            
+        )
+    }
+    
+    function ListEquipment(equipment){
+        return(
+            <div id="List">
+                <h3>Equipment</h3>
+                    {equipment.map((e,index) => {
+                        return (<p key={index}>{e}</p>)
+                    })}
+            </div>
+        )
+    }
+    
+    function ListInstructions(instructions){
+        let count = 0;
+        return(
+            <>
+                {instructions.map((i, index) => {
+                    count++
+                    return (
+                        <div id="Step" key={index}>
+                            <h3>{"Step "+ count}</h3>
+                            <p>{i}</p>
+                        </div>
+                    )
+                })}
+            </>
+        )
+    }
+
     return(
         <>
             <NavBar/>
             <div id="RecipeInfo">
                 <h2>{data.title}</h2>
-                <button id="IconButton">
-                    <Dash/>
-                </button>
+                {DeleteButton(currentUser, recipe)}
                 <p id="Author"> Recipe by {data.author}</p>
                 <p id="Description">{data.description}</p>
                 <img src={data.image} alt={data.title}/>
@@ -35,47 +90,6 @@ function RecipePage(){
     )
 }
 
-function ListIngredients(ingredients){
-    return(
-        <div id="List">
-            <h3>Ingredients</h3>
-            <ul>
-                {ingredients.map(i => {
-                    return (<p>{i}</p>)
-                })}
-            </ul>
-        </div>
-        
-    )
-}
-function ListEquipment(equipment){
-    return(
-        <div id="List">
-            <h3>Equipment</h3>
-            <ul>
-                {equipment.map(e => {
-                    return (<p>{e}</p>)
-                })}
-            </ul>
-        </div>
-    )
-}
 
-function ListInstructions(instructions){
-    let count = 0;
-    return(
-        <>
-            {instructions.map(i => {
-                count++
-                return (
-                    <div id="Step">
-                        <h3>{"Step "+ count}</h3>
-                        <p>{i}</p>
-                    </div>
-                )
-            })}
-        </>
-    )
-}
 
 export default RecipePage

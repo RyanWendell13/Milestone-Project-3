@@ -1,0 +1,58 @@
+.userPanel {
+  display: flex;
+  background-color: gray;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  max-width: 720px;
+  min-height: 250px;
+}
+.userPanel > * {
+  margin: 25px;
+  color: white;
+}
+.userPanel h2 {
+  margin-bottom: 20px;
+}
+.userPanel .line {
+  width: 1px;
+  background-color: white;
+}
+.userPanel div > form > :not(.submit) {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  color: white;
+}
+.userPanel div > form .submit {
+  margin-left: 80%;
+}
+@media screen and (max-width: 800px) {
+  .userPanel {
+    flex-direction: column;
+    max-width: 320px;
+    min-height: 600px;
+    margin-top: 50px;
+  }
+  .userPanel .line {
+    height: 1px;
+    width: auto;
+    background-color: white;
+  }
+}
+
+.iconButton {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: white;
+}
+.iconButton :hover {
+  color: lightgray;
+}
+.iconButton > * {
+  width: 30px;
+  height: 30px;
+}/*# sourceMappingURL=user.css.map */
