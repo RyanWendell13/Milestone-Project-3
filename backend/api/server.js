@@ -2,8 +2,12 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 const morgan = require('morgan')
-
+const connectDB = require('./config/db')
 const dataRouter = require('../routes/data')
+const Category = require('../models/categoryModel')
+const Recipe = require('../models/recipeModel')
+const User = require('../models/userModel')
+connectDB()
 
 const server = express()
 server.use(helmet())
