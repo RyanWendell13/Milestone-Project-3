@@ -1,0 +1,69 @@
+@import "config";
+@import "utilities";
+
+#UserPanel{
+    box-shadow:darkgray 10px 10px 10px;
+    display: flex;
+    background-color:gray;
+    @include horizontal-margin-center;
+    margin-top: 150px;
+    max-width:720px;
+    min-height: 250px;
+    >*{
+        margin: 25px;
+        color: set-text-color(gray);
+      }
+    h2{
+        margin-bottom: 20px;
+    }
+    #Line{
+        width: 1px;
+        background-color: $secondary-color;
+    }
+    div>form{
+        >:not(#Submit){
+            margin-bottom: 20px;
+            width: 100%;
+            height: 30px;
+            color: set-text-color(gray);
+        }
+        #Submit{
+            margin-left: 80%;
+            border: none;
+            width: 60px;
+            height: 25px;
+            :hover{
+                color: gray;
+            }
+        }
+      }
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        max-width: 320px;
+        min-height: 600px;
+        margin-top: 50px;
+        #Line{
+            height: 1px;
+            width: auto;
+            background-color: $secondary-color;
+        }
+    }
+}
+
+
+#IconButton{
+    background-color: transparent;
+    border: none;
+    position:absolute;
+    right: 10px;
+    top:5px;
+    color: set-text-color($primary-color);
+    :hover{
+        color: $hover-color;
+    }
+    >*{
+        width: 30px;
+        height: 30px;
+    }
+
+}

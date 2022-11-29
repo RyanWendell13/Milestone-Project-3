@@ -1,7 +1,8 @@
 import React from "react"
 import NavBar from "../components/NavBar"
 import Category from "../components/Category"
-import {useEffect, useState} from "react"
+import {useEffect, useState, useContext} from "react"
+import {CurrentUser} from "../contexts/CurrentUser"
 
 
 function CategoryPage(){
@@ -18,19 +19,6 @@ function CategoryPage(){
         setData(test)
     }, []);
 
-
-    
-
-
-    return(
-        <>
-            <NavBar/>
-            {CreateCategories(data)}
-        </>
-        
-    )
-
-
     function CreateCategories(data){
         return(
             <div id= "Categories">
@@ -44,6 +32,17 @@ function CategoryPage(){
             </div>
         )
     }
+
+    return(
+        <>
+            <NavBar/>
+            {CreateCategories(data)}
+        </>
+        
+    )
+
+
+    
 }
 
 export default CategoryPage

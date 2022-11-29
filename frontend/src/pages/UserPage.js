@@ -9,7 +9,7 @@ function UserPage(){
                 <div id="SignUp">
                     <h2>SignUp</h2>
                     <form>
-                        <label>Email</label>
+                        <label>Username</label>
                         <input required type="text"/>
                         <label>Password</label>
                         <input required type="text" multiple/>
@@ -24,7 +24,7 @@ function UserPage(){
                 <div id="Login">
                     <h2>Login</h2>
                     <form>
-                        <label>Email</label>
+                        <label>Username</label>
                         <input required type="text"/>
                         <label>Password</label>
                         <input required type="text"/>

@@ -3,7 +3,7 @@ import {React, createContext, useState, useEffect} from "react";
 export const CurrentUser= createContext()
 
 function CurrentUserProvider({children}){
-    const [currentUser, setCurrentUser] = useState()
+    const [currentUser, setCurrentUser] = useState(null)
 
     //Uncomment Later
     // useEffect(async () => {

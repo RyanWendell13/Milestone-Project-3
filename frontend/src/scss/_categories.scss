@@ -1,0 +1,72 @@
+@import "config";
+@import "utilities";
+#Categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 85vh;
+    width: 100vw;
+    padding-bottom: 50px;
+
+    #Category{
+        box-shadow:gray 10px 10px 10px;
+        color: set-text-color($primary-color);
+        margin-top: 35px;
+        width: 400px;
+        height: 550px;
+        background-color: $primary-color;
+        text-align: center;
+        position: relative;
+        >#Icon{
+            position:absolute;
+            right: 10px;
+            top:5px;
+            color: set-text-color($primary-color);
+            :hover{
+                color: lightgray;
+            }
+            vertical-align:sub;
+            >*{
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        #RecipeList{
+            margin: 20px;
+            padding-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            height: 85%;
+            justify-content: space-evenly;
+            border-top: solid $secondary-color ;
+            border-bottom: solid $secondary-color;
+            >a{
+                text-decoration: none;
+                color: set-text-color($primary-color);
+                :hover{
+                     filter: brightness(80%);
+                }
+            }
+
+            #Recipe{
+
+                overflow-y:hidden;
+                width:125px;
+                height: 150px;
+                padding: 10px;
+                margin: 10px;
+                background-color: $primary-color;
+                background-color: $tertiary-color;
+                :hover{
+                    filter: none;
+                }
+                >img{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}

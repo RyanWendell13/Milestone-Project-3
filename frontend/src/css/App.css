@@ -47,6 +47,7 @@ header #Icon > * {
   padding-bottom: 50px;
 }
 #Categories #Category {
+  box-shadow: gray 10px 10px 10px;
   color: white;
   margin-top: 35px;
   width: 400px;
@@ -105,6 +106,7 @@ header #Icon > * {
 }
 
 #UserPanel {
+  box-shadow: darkgray 10px 10px 10px;
   display: flex;
   background-color: gray;
   margin-left: auto;
@@ -132,6 +134,12 @@ header #Icon > * {
 }
 #UserPanel div > form #Submit {
   margin-left: 80%;
+  border: none;
+  width: 60px;
+  height: 25px;
+}
+#UserPanel div > form #Submit :hover {
+  color: gray;
 }
 @media screen and (max-width: 800px) {
   #UserPanel {
@@ -164,6 +172,7 @@ header #Icon > * {
 }
 
 #RecipeInfo {
+  box-shadow: gray 10px 10px 10px;
   position: relative;
   text-align: center;
   background-color: cornflowerblue;
@@ -182,6 +191,7 @@ header #Icon > * {
 #RecipeInfo > img {
   display: block;
   width: 300px;
+  border: solid;
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -202,7 +212,7 @@ header #Icon > * {
   margin-left: auto;
   margin-right: auto;
 }
-#RecipeInfo > #Step {
+#RecipeInfo #Step {
   text-align: center;
   margin: 25px;
 }/*# sourceMappingURL=App.css.map */
