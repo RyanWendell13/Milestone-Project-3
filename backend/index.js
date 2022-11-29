@@ -5,6 +5,7 @@ const express = require('express')
 const app = express();
 //const cookieSession = require('cookie-session')
 
+const uri = "mongodb+srv://Cameron123:Cameron123@recipecluster.bluem2k.mongodb.net/RecipeApp"
 
 app.use('/recipes', require('./api/recipes'))
 
@@ -17,6 +18,16 @@ app.get('*', (req, res) => {
     res.status(404).send('<h1>404 Page</h1>')
 })
 
+async function connect() {
+    try {
+        await mongoose.connect(uri);
+        console.log("Connected to MongoDB");
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+connect()
 
 app.listen(process.env.PORT, () => {
     console.log(`\n** server is running on port ${process.env.PORT}`)

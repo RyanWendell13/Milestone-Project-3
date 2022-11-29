@@ -1,13 +1,28 @@
 const router = require('express').Router()
 const db = require("../models")
+const recipes = require('../models/recipes')
 
 
 router.get('/',(req, res) => {
-    res.send('GET /recipe stub')
+    db.Recipe.find()
+    .then((recipes) => {
+        res.render('recipes/index', { places })
+    })
+    .catch(err => {
+        console.log(err)
+        res.render('error404')
+    })
 })
 
 router.post('/', (req, res) => {
-    res.send('POST /recipe stub')
+    db.Recipe.create(req.body)
+    .then(() => {
+        res.redirect('/recipes')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
 })
 
 router.get('/new', (req, res) => {
