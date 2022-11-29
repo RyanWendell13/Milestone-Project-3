@@ -13,6 +13,3 @@ const userSchema = mongoose.Schema({
 })
 
 module.exports = mongoose.model('User', userSchema)
-
-/// Go to controller and 
-/// const User = require('../models/userModel')

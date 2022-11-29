@@ -24,6 +24,3 @@ const recipeSchema = mongoose.Schema({
     }]
 }
 )
-
-/// Go to controller and 
-/// const User = require('../models/recipeModel')
