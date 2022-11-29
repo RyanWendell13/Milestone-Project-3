@@ -6,7 +6,7 @@ const recipes = require('../models/recipes')
 router.get('/',(req, res) => {
     db.Recipe.find()
     .then((recipes) => {
-        res.render('recipes/index', { places })
+        res.render('recipes/index', { recipes })
     })
     .catch(err => {
         console.log(err)
