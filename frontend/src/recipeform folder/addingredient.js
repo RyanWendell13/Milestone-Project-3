@@ -1,50 +1,63 @@
-const addidContainer = document.querySelector('[data-idLists]')
-const newInfoForm= document.querySelector('[data-new-info-form]')
-const newInput= document.querySelector('[data-new-input]')
+//Add ingredients and Directions to list
+//create two variables (Ingredient list)
 
-const Local_Storage = 'id.lists'
+const addIng = document.querySelector('#add-info')
+const addIBtn = document.querySelector('#addIBtn')
 
-let lists = JSON.parse(localStorage.getItem(Local_Storage)) || []  
+//create two variables (Direction list)
+const addDir = document.querySelector('.add-input')
+const addDBtn = document.querySelector('#addDBtn')
 
-newInfoForm.addEventListener('submit', e => {
-    e.preventDefault()
-    const listName = newInput.value
-    if (listName == null || listName === '')return
-    const list = createList(listName)
-    newInput.value = null
-    lists.push(list)
-    saveNRender()
-})
-
-function createList(name) {
-   return {id: Date.now().toString(), name: name, tasks:[] }
+//create function for adding to Ingredient list
+function add2ListI() {
+    if (addIng.value ==='') {
+        alert('Enter Ingredient');
+    } else {
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.innerHTML = addIng.value;
+        addIng.value = '';
+        ul.appendChild(li);
+        createBtn(li);
+  }
 }
 
-function saveNRender() {
-    saveLists()
-    render ()
+//create function for adding to Direction list
+function add2ListD() {
+  if (addDir.value ==='') {
+      alert('Enter Cooking Steps');
+  } else {
+      const ul = document.querySelector('ol');
+      const li = document.createElement('li');
+      li.innerHTML = addDir.value;
+      addDir.value = '';
+      ul.appendChild(li);
+      createBtn(li);
+}
 }
 
+// add ingredient to list when button is clicked
+addIBtn.addEventListener('click', () => {
+    add2ListI();
+});
 
-function saveLists(){
-    localStorage.setItem(Local_Storage,JSON.stringify(lists))
-}
+// add direction to list when button is clicked
+addDBtn.addEventListener('click', () => {
+  add2ListD();
+});
 
-function render() {
-    clearElement(addidContainer)
-    lists.forEach(list => {
-        const listElement = document.createElement('li')
-        listElement.dataset.listId = list.id
-        listElement.classList.add("list-name")
-        listElement.innerText = list.name
-        addidContainer.appendChild(listElement)
-    })
-}
-
-function clearElement(element) {
-    while(element.firstChild) {
-        element.removeChild(element.firstChild)
+//add ingredient when enter is pressed
+//13 == enter button
+addIng.addEventListener('keyup', (event) => {
+    if(event.which === 13) {
+      add2ListI();
     }
-}
+  });
 
-render()
+//add direction when enter is pressed
+
+addDir.addEventListener('keyup', (event) => {
+  if(event.which === 13) {
+    add2ListD();
+  }
+});

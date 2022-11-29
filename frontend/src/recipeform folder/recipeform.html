@@ -15,7 +15,7 @@
               <div class="forms-wrap">
                 <form action="index.html" autocomplete= "off">
                   <div class="logo">
-                    <img src="./img/logo.png" alt="TheWorkoutApp" />
+                    <img src="../img/logo.png" alt="TheWorkoutApp" />
                     <h4>The Recipe</h4>
                   </div>
 
@@ -55,26 +55,19 @@
                   <div class="input-wrap">
                     <label> Ingredients </label>
                     <div class="addform">
-                      <ul class="add-ingredient-list"
-                          style="list-style-type:circle"  data-idLists>
-                       <!--   <li class="active ingredients">Spinach</li>
-                          <li>Eggs</li>
-                          <li>Heavy Cream</li>-->
-                          <i class="fa-solid fa-trash-can"></i>
+                      <ul class="add-ingredient-list">
                       </ul>
-                   
+        <!--Part of Form that takes in info-->
                               <input 
                                   type="text"
-                                  class="add-input"
-                                  data-new-input
+                                  id="add-info"
                                   placeholder="enter ingredients"
-                                  aria-label="new ingredient entered here"
                               />
-                              <input  
+                            
+                              <button  
                                   type="button" 
-                                  class="add-ingredient-submit-btn"
-                                  aria-label="add new ingredient" 
-                                  value="add"/>
+                                  id="addIBtn"
+                                  class="add-ingredient-btn">Add</button>
                          
                       </div >
                   </div>
@@ -150,25 +143,18 @@
                 <div class="input-wrap">
                 <label> Directions</label>
                 <div class="addform">
-                <ol class="add-direction-list" data-idLists>
-                    <!--<li class="active directions">Pre-heat to 350 Degrees</li>
-                    <li>Mix in batter</li>
-                    <li>Add Sugar, Cream and Eggs</li> -->
-                    <i class="fa-solid fa-trash-can"></i> 
+                <ol class="add-direction-list">
                 </ol>
              
                         <input 
                             type="text"
                             class="add-input"
-                            data-new-input
                             placeholder="enter cooking steps"
-                            aria-label="new direction  here"
                         />
-                        <input 
+                        <button 
                             type="button"
                             class="add-direction-submit-btn"
-                            aria-label="add new direction"
-                            value="add"/>
+                            id="addDBtn">Add</button>
 
                 </div   >
                 </div>
@@ -182,7 +168,10 @@
                     ></textarea>
                 </div>
 
-                <input type="submit" value="Add Recipe" class="add-recipe-btn" />
+                <button
+                 type="button"
+                 value="Add Recipe" 
+                 class="add-recipe-btn"> Add Recipe</button>
               </div>
                 </div>
               </div>

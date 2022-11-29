@@ -248,7 +248,7 @@ form {
 
 /* Add Ingredients and Direction CSS*/
 
-.add-input{
+.add-input, #add-info{
   background: transparent;
   border: 0;
   outline: none;
@@ -264,7 +264,7 @@ form {
 }
 
 
-.add-ingredient-submit-btn ,.add-direction-submit-btn {
+#addIBtn, #addDBtn {
   cursor: pointer;
   width: 12%;
   height: 20px;
@@ -277,19 +277,30 @@ form {
 
 }
 
-.add-input:focus {
+.add-input:focus, #add-info:focus {
   border-bottom-width: 4px;
   border-color: #894915;
 }
 
-.add-input::placeholder {
+.add-info::placeholder {
   font-size: 12px;
 }
 
-.add-input:focus::placeholder{
+.add-info:focus::placeholder{
   opacity: .3;
  
 }
+
+.addform ul, .addform ol { 
+      height:200px; 
+      width:300px;
+      overflow:hidden; 
+      overflow-y:scroll;
+      border-radius: 7px ;
+      padding-left: 5px;
+      border: 1px solid #894915;
+      border-bottom-width: 2px;
+  }
 
 @media (max-width: 530px) {
   main {
