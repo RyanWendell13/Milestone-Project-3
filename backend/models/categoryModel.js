@@ -10,3 +10,6 @@ const categorySchema = mongoose.Schema({
 )
 
 module.exports = mongoose.model('Category', categorySchema)
+
+/// Go to controller and 
+/// const Category = require('../models/categoryModel')
