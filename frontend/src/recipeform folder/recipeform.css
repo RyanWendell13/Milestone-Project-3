@@ -291,16 +291,47 @@ form {
  
 }
 
-.addform ul, .addform ol { 
+.addform ul,.addform ol { 
       height:200px; 
       width:300px;
-      overflow:hidden; 
-      overflow-y:scroll;
+      /*overflow-y:scroll;*/
       border-radius: 7px ;
       padding-left: 5px;
       border: 1px solid #894915;
       border-bottom-width: 2px;
   }
+ 
+
+ul{
+  list-style: none;
+}
+
+
+ul li {
+  position: relative;
+  display:block;
+  margin: 5px 0;
+  line-height: 20px;
+  box-shadow:  -3px 1px 10px #bababa;
+  
+}
+
+ol li{
+  position: relative;
+  list-style-position: inside;
+  margin: 5px 0;
+  line-height: 20px;
+  box-shadow: -3px 1px 10px #bababa;;
+}
+
+ul li span, ol li span {
+  position: absolute;
+  width: 15px;
+  top:1;
+  right:0;
+  color:rgb(125, 166, 21);
+}
+
 
 @media (max-width: 530px) {
   main {
