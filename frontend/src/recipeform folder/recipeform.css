@@ -248,7 +248,7 @@ form {
 
 /* Add Ingredients and Direction CSS*/
 
-.add-input, #add-info{
+ #add-info, .add-input{
   background: transparent;
   border: 0;
   outline: none;
@@ -256,8 +256,10 @@ form {
   font-size: inherit;
   border-bottom: 2px solid currentColor;
   transition: border-bottom 150ms ease-in;
+   width: 86%;
   
 }
+
 
 .add-dir , .add-ing {
   display: flex;
@@ -294,7 +296,7 @@ form {
 .addform ul,.addform ol { 
       height:200px; 
       width:300px;
-      /*overflow-y:scroll;*/
+      overflow-y:scroll;
       border-radius: 7px ;
       padding-left: 5px;
       border: 1px solid #894915;
@@ -324,12 +326,16 @@ ol li{
   box-shadow: -3px 1px 10px #bababa;;
 }
 
-ul li span, ol li span {
+ul span, ol span {
   position: absolute;
-  width: 15px;
+ text-align: center;
+  width: 20px;
   top:1;
   right:0;
-  color:rgb(125, 166, 21);
+  color:white;
+  background:#894915;
+  border-radius: 5px ;
+
 }
 
 

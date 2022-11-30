@@ -11,7 +11,7 @@ const addDir = document.querySelector('.add-input')
 const addDBtn = document.querySelector('#addDBtn')
 const dirLst = document.querySelector('.add-direction-list')
 
-
+const delSpan = document.querySelector('span')
 //create function for adding to Ingredient list
 addIBtn.addEventListener('click', (addI)=> {
   if (addIng.value ==='') {
@@ -27,7 +27,7 @@ addIBtn.addEventListener('click', (addI)=> {
 }
 })
 //create function for adding to Direction list
-addDBtn.addEventListener('click', (addD) => {
+addDBtn.addEventListener('click', () => {
   if (addDir.value ==='') {
       alert('Enter Cooking Steps');
   } else {
@@ -38,9 +38,19 @@ addDBtn.addEventListener('click', (addD) => {
     const listDSpan = document.createElement('span')
     listDSpan.innerHTML = 'x';
     li.appendChild(listDSpan)
-}
-})
+  }
+});
 
+//delSpan.addEventListener('click',(e) => {
+ // if(e.target.className === 'items'){
+ //   const items = e.target;
+//    const li = items.parentNode;
+ //   const ul = li.parentNode;
+ //   if {tems.className === 'items'} {
+ //     ul.removeChild(li)
+//   }
+ //   }
+ // });
 
 
 //add direction when enter is pressed
