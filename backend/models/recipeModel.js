@@ -22,5 +22,9 @@ const recipeSchema = mongoose.Schema({
     instructions: [{
         type: String
     }]
+}, {
+    description: {
+        type: String
+}
 }
 )
