@@ -1,5 +1,18 @@
 {
-  "dependencies": {
-    "express": "^4.18.2"
+    "name": "milestone-project-3",
+    "version": "1.0.0",
+    "engines": {
+      "node": "18.6.0"
+    },
+    "description": "",
+    "main": "",
+    "scripts": {
+      "start": "npm start --prefix backend",
+      "install-frontend": "cd frontend && npm install && npm run build && cd ..",
+      "install-backend": "cd backend && npm install && cd ..",
+      "build": "npm run install-frontend && npm run install-backend"
+    },
+    "keywords": [],
+    "author": "Ryan Wendell",
+    "license": "ISC"
   }
-}
