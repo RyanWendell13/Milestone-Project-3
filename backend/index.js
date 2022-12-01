@@ -1,40 +1,38 @@
 require('dotenv').config()
-const mongoose = require("mongoose");
 const db = require('./models')
 const express = require('express')
-//const bodyParser = require('body-parser')
-//const cors = require('cors')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const path = require('path')
 const app = express();
-//const cookieSession = require('cookie-session')
-const connectDB = require('./config/db')
-const currentUser = require('./middleware/currentUser')
-
-connectDB()
+const cookieSession = require('cookie-session')
+const CurrentUser = require('./middleware/CurrentUser')
 
 
 
-app.use('/recipes', require('./api/recipes'))
-app.use(currentUser)
+app.use('/api/categories', require('./api/categories'))
+app.use('/api/recipes', require('./api/recipes'))
+app.use('/api/users', require('./api/users'))
+app.use(cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true
+  }))
+app.use(express.static(path.resolve(__dirname, '../frontend/build')));
+app.use(bodyParser.json())
+app.use(CurrentUser)
+app.use(cookieSession({
+    name: 'session',
+    keys: [process.env.SESSION_SECRET],
+    sameSite: 'strict',
+    //2 hours
+    maxAge: 1*60*60*1000
+  }))
 
 
-app.get('/',(req, res) =>{
-    res.send('Helllo world!')
+app.get('/*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 })
 
-app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
-})
-
-// async function connect() {
-//     try {
-//         await mongoose.connect();
-//         console.log("Connected to MongoDB");
-//     } catch (error) {
-//         console.error(error)
-//     }
-// }
-
-// connect()
 
 app.listen(process.env.PORT, () => {
     console.log(`\n** server is running on port ${process.env.PORT}`)
