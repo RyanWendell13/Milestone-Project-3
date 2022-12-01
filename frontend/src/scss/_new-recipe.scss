@@ -1,0 +1,242 @@
+@import "config";
+@import "utilities";
+
+  
+  .box {
+    max-width:700px;
+    min-height: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: set-text-color($primary-color);
+    position: relative;
+    background-color: $form-primary-color;
+    box-shadow:darkgray 10px 10px 10px;
+  }
+  
+
+  .forms-wrap {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition:.6s ease-in-out;
+  }
+
+
+.form-class {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: opacity 0.2s 0.4s;
+  }
+  
+  
+  .add-recipe-btn {
+    width: 100px;
+    height: 43px;
+    margin-left: auto;
+    color: set-text-color($secondary-color);
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+    border: none;
+    
+  }
+  .add-recipe-btn:hover{
+        background-color: $hover-color;
+}
+  
+ .add-recipe-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+ .input-wrap{
+    display: flex;
+    flex-direction: column;
+    >label{
+        font-size: large;
+    }
+    .input-field{
+        width: 100%;
+        height: 30px;
+        color: set-text-color($secondary-color);
+    }
+    .add-input{
+        width: 100%;
+        height: 30px;
+        color: set-text-color($form-primary-color);
+        
+    }
+    margin-bottom: 20px;
+        
+}
+
+
+ .form-column{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+ }
+
+ .ingredients{
+    outline: none;
+    font-size: 15px;
+    border-radius: 7px ;
+    padding-left: 5px;
+    border: 1px solid #894915;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease
+}
+
+ .input-field{
+    height: 20px;
+    width:100%;
+    outline: none;
+    font-size: 15px;
+    padding-left: 5px;
+    transition: all 0.3s ease
+}
+ .short-desc{
+    height: 70px;
+    width:100%;
+    outline: none;
+    font-size: 15px;
+    padding-left: 5px;
+    transition: all 0.3s ease
+}
+
+.category-input{
+    font-size: large;
+}
+.mult{
+    margin-top: 5px;
+    border-top: solid $secondary-color ;
+    border-bottom: solid $secondary-color;
+    outline: none;
+    font-size: x-large;
+    padding-left: 5px;
+    transition: all 0.3s ease;
+    height: 150px;
+    overflow-y: auto;
+    >div>input{
+        margin-left: 5px;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+
+/* Add Ingredients and Direction CSS*/
+.list-input-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.list-list-item-container{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.add-ingredient-list{
+    margin-top: 10px;
+    height: 80px;
+    overflow-y: auto;
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+}
+
+
+.add-input{
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    border-bottom: 2px solid currentColor;
+    transition: border-bottom 150ms ease-in;
+    width: 100%;
+    height: 30px;
+    color: set-text-color($form-primary-color);
+  
+}
+
+.add-dir , .add-ing {
+  display: flex;
+}
+.sub-ingredient-submit-btn{
+    cursor: pointer;
+    background-color: transparent;
+    color: set-text-color($secondary-color);
+    border: none;
+    
+    font-size: 0.8rem;
+    >*{
+        width: 20px;
+        height: 20px;
+    }
+    :hover{
+        color: $hover-color;
+    }
+}
+
+
+.add-ingredient-submit-btn ,.add-direction-submit-btn {
+    cursor: pointer;
+    background-color: transparent;
+    color: set-text-color($form-primary-color);
+    border: none;
+    
+    font-size: 0.8rem;
+    >*{
+        width: 20px;
+        height: 20px;
+    }
+    :hover{
+        color: $hover-color;
+    }
+}
+
+.add-input:focus {
+  border-bottom-width: 4px;
+  border-color: $tertiary-color;
+}
+
+.add-input::placeholder {
+  font-size: 12px;
+}
+
+.add-input:focus::placeholder{
+  opacity: .3;
+ 
+}
+.add-ingedient-list{
+    list-style-type: circle;
+}
+
+@media screen and (max-width: 800px) {
+    .form-class{
+        flex-direction: column;
+        max-width: 320px;
+        min-height: 600px;
+    }
+}

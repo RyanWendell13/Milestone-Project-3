@@ -22,10 +22,10 @@ function Category(props){
         )
     }
 
-    function AddButton(){
+    function AddButton(title){
         if(currentUser){
             return(
-                <a id="Icon">
+                <a id="Icon" href={`/recipe/new/${title}`}>
                     <Plus/>
                 </a>
             )
@@ -35,7 +35,7 @@ function Category(props){
     return(
         <div id="Category">
             <h1>{props.title}</h1>
-            {AddButton(currentUser)}
+            {AddButton(props.title)}
             
             {ListRecipes(props)}
         </div>
