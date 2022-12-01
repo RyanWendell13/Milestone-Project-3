@@ -10,14 +10,24 @@ header{
     >*{
         color: set-text-color($primary-color);
         margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 30px;
     }
+    >h1{
+        margin-left: 20px;
+    }
+    
+    #NavIcons{
+
+        margin-right: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
     #UserText{
-        display: inline-block;
+        font-weight: bold;
+        margin-top: 20px;
         margin-left: 25px;
         color: set-text-color($primary-color);
-        vertical-align:super;
     }
     #Icon{
         margin-left: 25px;

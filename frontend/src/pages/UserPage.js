@@ -8,26 +8,24 @@ function UserPage(){
             <div id="UserPanel">
                 <div id="SignUp">
                     <h2>SignUp</h2>
-                    <form>
+                    <form onSubmit={HandleSignupSubmit}>
                         <label>Username</label>
                         <input required type="text"/>
                         <label>Password</label>
-                        <input required type="text" multiple/>
+                        <input required type="password"/>
                         <input required type="submit" id="Submit"/>
-                        
                     </form>
-
                 </div>
 
                 <div id="Line"></div>
 
                 <div id="Login">
                     <h2>Login</h2>
-                    <form>
+                    <form onSubmit={HandleLoginSubmit}>
                         <label>Username</label>
                         <input required type="text"/>
                         <label>Password</label>
-                        <input required type="text"/>
+                        <input required type="password"/>
                         <input required type="submit" id="Submit"/>
                     </form>
                 </div>
@@ -35,6 +33,13 @@ function UserPage(){
         </>
         
     )
+
+    function HandleSignupSubmit(){
+
+    }
+    function HandleLoginSubmit(){
+        
+    }
 }
 
 export default UserPage

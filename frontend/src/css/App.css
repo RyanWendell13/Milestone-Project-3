@@ -18,14 +18,21 @@ header {
 header > * {
   color: white;
   margin-top: 20px;
+}
+header > h1 {
   margin-left: 20px;
-  margin-right: 30px;
+}
+header #NavIcons {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 header #UserText {
-  display: inline-block;
+  font-weight: bold;
+  margin-top: 20px;
   margin-left: 25px;
   color: white;
-  vertical-align: super;
 }
 header #Icon {
   margin-left: 25px;
@@ -57,6 +64,11 @@ header #Icon > * {
   text-align: center;
   position: relative;
 }
+@media screen and (max-width: 800px) {
+  #Categories #Category {
+    box-shadow: grey 0px 10px 10px;
+  }
+}
 #Categories #Category > #Icon {
   position: absolute;
   right: 10px;
@@ -78,7 +90,7 @@ header #Icon > * {
   flex-wrap: wrap;
   overflow-y: auto;
   height: 85%;
-  justify-content: space-evenly;
+  justify-content: start;
   border-top: solid white;
   border-bottom: solid white;
 }
@@ -95,6 +107,7 @@ header #Icon > * {
   height: 150px;
   padding: 10px;
   margin: 10px;
+  margin-left: 20px;
   background-color: cornflowerblue;
   background-color: #89abea;
 }
@@ -314,6 +327,7 @@ header #Icon > * {
   display: flex;
   flex-direction: column;
   width: 300px;
+  margin-bottom: 30px;
 }
 
 .ingredients {
@@ -465,7 +479,14 @@ header #Icon > * {
   list-style-type: circle;
 }
 
+.addform label {
+  font-size: large;
+}
+
 @media screen and (max-width: 800px) {
+  .box {
+    width: 350px;
+  }
   .form-class {
     flex-direction: column;
     max-width: 320px;

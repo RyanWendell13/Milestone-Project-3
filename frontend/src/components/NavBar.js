@@ -9,7 +9,7 @@ function NavBar(){
         if (currentUser){
             return(
                 <div id="UserText">
-                    <p>Logged In As {currentUser.username}</p>
+                    <p>{currentUser.username}</p>
                 </div>
             )
         }
