@@ -5,9 +5,9 @@ const express = require('express')
 const app = express();
 //const cookieSession = require('cookie-session')
 const connectDB = require('./config/db')
-const Category = require('../models/categoryModel')
-const Recipe = require('../models/recipeModel')
-const User = require('../models/userModel')
+const Category = require(' ../backend/models/categoryModel')
+const Recipe = require('../backend/models/recipeModel')
+const User = require('../backend/models/userModel')
 connectDB()
 
 const uri = "mongodb+srv://Cameron123:Cameron123@recipecluster.bluem2k.mongodb.net/RecipeApp"
