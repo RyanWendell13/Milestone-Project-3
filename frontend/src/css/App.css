@@ -1,4 +1,5 @@
 * {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -130,16 +131,26 @@ header #Icon > * {
   margin-bottom: 20px;
   width: 100%;
   height: 30px;
+}
+#UserPanel div > form > label {
   color: white;
+}
+#UserPanel div > form > input {
+  padding-left: 5px;
+  color: black;
 }
 #UserPanel div > form #Submit {
   margin-left: 80%;
   border: none;
   width: 60px;
   height: 25px;
+  padding: 0;
 }
 #UserPanel div > form #Submit :hover {
-  color: gray;
+  background-color: lightgray;
+}
+#UserPanel div > form #Submit:hover {
+  background-color: lightgray;
 }
 @media screen and (max-width: 800px) {
   #UserPanel {
@@ -215,4 +226,249 @@ header #Icon > * {
 #RecipeInfo #Step {
   text-align: center;
   margin: 25px;
+}
+
+.box {
+  max-width: 700px;
+  min-height: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  position: relative;
+  background-color: gray;
+  box-shadow: darkgray 10px 10px 10px;
+}
+
+.forms-wrap {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.6s ease-in-out;
+}
+
+.form-class {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transition: opacity 0.2s 0.4s;
+}
+
+.add-recipe-btn {
+  width: 100px;
+  height: 43px;
+  margin-left: auto;
+  color: black;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+  border: none;
+}
+
+.add-recipe-btn:hover {
+  background-color: lightgray;
+}
+
+.add-recipe-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.input-wrap > label {
+  font-size: large;
+}
+.input-wrap .input-field {
+  width: 100%;
+  height: 30px;
+  color: black;
+}
+.input-wrap .add-input {
+  width: 100%;
+  height: 30px;
+  color: white;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.ingredients {
+  outline: none;
+  font-size: 15px;
+  border-radius: 7px;
+  padding-left: 5px;
+  border: 1px solid #894915;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.input-field {
+  height: 20px;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.short-desc {
+  height: 70px;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.category-input {
+  font-size: large;
+}
+
+.mult {
+  margin-top: 5px;
+  border-top: solid white;
+  border-bottom: solid white;
+  outline: none;
+  font-size: x-large;
+  padding-left: 5px;
+  transition: all 0.3s ease;
+  height: 150px;
+  overflow-y: auto;
+}
+.mult > div > input {
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+/* Add Ingredients and Direction CSS*/
+.list-input-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-list-item-container {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.add-ingredient-list {
+  margin-top: 10px;
+  height: 80px;
+  overflow-y: auto;
+  background-color: white;
+  color: black;
+}
+
+.add-input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+  border-bottom: 2px solid currentColor;
+  transition: border-bottom 150ms ease-in;
+  width: 100%;
+  height: 30px;
+  color: white;
+}
+
+.add-dir, .add-ing {
+  display: flex;
+}
+
+.sub-ingredient-submit-btn {
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 0.8rem;
+}
+.sub-ingredient-submit-btn > * {
+  width: 20px;
+  height: 20px;
+}
+.sub-ingredient-submit-btn :hover {
+  color: lightgray;
+}
+
+.add-ingredient-submit-btn, .add-direction-submit-btn {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 0.8rem;
+}
+.add-ingredient-submit-btn > *, .add-direction-submit-btn > * {
+  width: 20px;
+  height: 20px;
+}
+.add-ingredient-submit-btn :hover, .add-direction-submit-btn :hover {
+  color: lightgray;
+}
+
+.add-input:focus {
+  border-bottom-width: 4px;
+  border-color: #89abea;
+}
+
+.add-input::-moz-placeholder {
+  font-size: 12px;
+}
+
+.add-input:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.add-input::placeholder {
+  font-size: 12px;
+}
+
+.add-input:focus::-moz-placeholder {
+  opacity: 0.3;
+}
+
+.add-input:focus:-ms-input-placeholder {
+  opacity: 0.3;
+}
+
+.add-input:focus::placeholder {
+  opacity: 0.3;
+}
+
+.add-ingedient-list {
+  list-style-type: circle;
+}
+
+@media screen and (max-width: 800px) {
+  .form-class {
+    flex-direction: column;
+    max-width: 320px;
+    min-height: 600px;
+  }
 }/*# sourceMappingURL=App.css.map */

@@ -4,14 +4,14 @@
 #UserPanel{
     box-shadow:darkgray 10px 10px 10px;
     display: flex;
-    background-color:gray;
+    background-color:$form-primary-color;
     @include horizontal-margin-center;
     margin-top: 150px;
     max-width:720px;
     min-height: 250px;
     >*{
         margin: 25px;
-        color: set-text-color(gray);
+        color: set-text-color($form-primary-color);
       }
     h2{
         margin-bottom: 20px;
@@ -25,16 +25,27 @@
             margin-bottom: 20px;
             width: 100%;
             height: 30px;
-            color: set-text-color(gray);
         }
+        >label{
+            color: set-text-color($form-primary-color);
+        }
+        >input{
+            padding-left: 5px;
+            color: set-text-color($secondary-color);
+        }
+        
         #Submit{
             margin-left: 80%;
             border: none;
             width: 60px;
             height: 25px;
+            padding: 0;
             :hover{
-                color: gray;
+                background-color: $hover-color;
             }
+        }
+        #Submit:hover{
+            background-color: $hover-color;
         }
       }
       @media screen and (max-width: 800px) {

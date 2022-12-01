@@ -6,11 +6,10 @@ import {CurrentUser} from '../contexts/CurrentUser'
 function RecipePage({recipe}){
     const {currentUser} = useContext(CurrentUser)
 
-    recipe = {author: "1"}
 
     let r = {
         title: "Bread",
-        author: "Username",
+        author: "temp_username",
         image: "../../Bread.jpg",
         description: "description description description description description description description description description description description description description description description description description description description description description description description description ",
         ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
@@ -22,7 +21,7 @@ function RecipePage({recipe}){
 
 
     function DeleteButton(){
-        if(currentUser && currentUser._id === recipe.author){
+        if(currentUser && currentUser.username == data.author){
             return(
                 <button id="IconButton">
                     <Dash/>
@@ -55,6 +54,7 @@ function RecipePage({recipe}){
             </div>
         )
     }
+    
     
     function ListInstructions(instructions){
         let count = 0;
