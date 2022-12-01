@@ -22,7 +22,6 @@ In the backend folder create a .env file and add the following.
     SESSION_SECRET = (Type a string of random letters)
     CORS_ORIGIN = (Set to frontend url)
 
-
 ## API
 ### Backend
 Method | Path | Purpose
