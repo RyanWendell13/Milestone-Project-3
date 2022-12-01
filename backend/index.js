@@ -5,7 +5,7 @@ const express = require('express')
 const app = express();
 //const cookieSession = require('cookie-session')
 
-const uri = "mongodb+srv://Cameron123:Cameron123@recipecluster.bluem2k.mongodb.net/RecipeApp"
+
 
 app.use('/recipes', require('./api/recipes'))
 
