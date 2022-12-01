@@ -7,3 +7,5 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 
 module.exports.Recipe = require('./recipes')
+module.exports.User = require('./user')
+module.exports.Category = require('./category')

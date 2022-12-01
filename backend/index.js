@@ -10,7 +10,7 @@ const Recipe = require('../backend/models/recipeModel')
 const User = require('../backend/models/userModel')
 connectDB()
 
-const uri = "mongodb+srv://Cameron123:Cameron123@recipecluster.bluem2k.mongodb.net/RecipeApp"
+
 
 app.use('/recipes', require('./api/recipes'))
 
