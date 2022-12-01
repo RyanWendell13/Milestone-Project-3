@@ -1,3 +1,30 @@
+# Recipe Book
+An online recipe book. Users can login and add their own recipes. 
+
+## Demo
+
+## Technology
+### Frontend
+- React
+- Scss
+
+### Backend
+- Node JS
+- Express
+- MongoDB
+
+## Technical Information
+### How To Run(Locally)
+In the backend folder create a .env file and add the following.
+
+    MONGO_URI = (MongoDB connection string)
+    PORT = (Port number to run on)
+    SESSION_SECRET = (Type a string of random letters)
+    CORS_ORIGIN = (Set to frontend url)
+
+
+## API
+### Backend
 Method | Path | Purpose
 ---|---|---
 get | /api/categories | Returns an array of categories
