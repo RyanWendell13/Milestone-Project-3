@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const db = require("../models")
 const bcrypt = require('bcrypt')
-const currentUser = require('../middleware/CurrentUser')
 
 router.post('/new', async(req, res)=>{
     console.log(req.body)
@@ -23,7 +22,7 @@ router.post('/authenication', async (req, res) => {
     }
     else{
         req.session._id = user._id
-        res.redirect("/")
+        res.json(user)
     }
 })
 

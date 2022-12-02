@@ -2,12 +2,10 @@ import React from "react"
 import NavBar from "../components/NavBar"
 import {useState, useContext, useEffect} from "react"
 import ListInput from "../components/ListInput"
-import {CurrentUser} from "../contexts/CurrentUser"
+import { CurrentUser } from "../contexts/CurrentUser"
 import { useParams } from "react-router-dom"
 
 function NewRecipePage(){
-
-    const {currentUser} = useContext(CurrentUser)
     const {category} = useParams()
 
     const [categories, setCategories] = useState()
@@ -35,6 +33,8 @@ function NewRecipePage(){
         setRecipe({...recipe, categories: [category]})
         
     },[]);
+
+    const {currentUser} = useContext(CurrentUser)
     console.log(currentUser)
     return(
         <>
@@ -48,7 +48,7 @@ function NewRecipePage(){
                         </div>
                          <div className="input-wrap">
                             <label>Author</label>
-                            <input className="input-field" type="text" value={currentUser.username} disabled/>
+                            <input className="input-field" type="text" value={!currentUser ? "Loading...": currentUser.username} disabled/>
                         </div>
 
                         <div className="input-wrap">

@@ -53,7 +53,14 @@ function UserPage(){
             },
             body: JSON.stringify(signUp)
         })
-
+        await fetch("/api/users/authenication", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(signUp)
+        })
+        window.location.href = '/';
 
     }
     async function HandleLoginSubmit(e){
@@ -65,6 +72,7 @@ function UserPage(){
             },
             body: JSON.stringify(login)
         })
+        window.location.href = '/';
         
     }
 }

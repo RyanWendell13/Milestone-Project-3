@@ -13,7 +13,7 @@ db.Category.create([{
     title: "Dessert",
     recipes: []
 },{
-    title: "Vegitarian",
+    title: "Vegan",
     recipes: []
 },{
     title: "Miscellaneous",
