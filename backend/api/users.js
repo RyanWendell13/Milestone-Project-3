@@ -1,27 +1,29 @@
 const router = require('express').Router()
 const db = require("../models")
 const bcrypt = require('bcrypt')
+const currentUser = require('../middleware/CurrentUser')
 
-router.post('/', async(req, res)=>{
-    let { password, ...rest } = req.body;
+router.post('/new', async(req, res)=>{
+    console.log(req.body)
     const user = await db.User.create({
-        email: req.body.email,
-        passwordDigest: await bcrypt.hash(password,10)
+        username: req.body.username,
+        password: await bcrypt.hash(req.body.password,10)
     })
     res.json(user)
 })
 
 
 router.post('/authenication', async (req, res) => {
-    let user = await db.User.findOne({email: req.body.email})
+    let user = await db.User.findOne({username: req.body.username})
     if(!user || !await bcrypt.compare(req.body.password, user.password)){
-        res.status(404).json({
+        
+        res.json({
             message: 'wrong user info'
         })
     }
     else{
         req.session._id = user._id
-        res.json({user})
+        res.redirect("/")
     }
 })
 

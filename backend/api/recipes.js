@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     db.Recipe.findByIdAndDelete(req.params.id)
     .then(() => {
-        res.redirect('/')
+        res.redirect("/")
     })
     .catch(err => {
         console.log('err', err)
@@ -26,7 +26,7 @@ router.delete('/:id', (req, res) => {
 })
 
 router.post("/new", (req, res) => {
-    db.User.findOne({username: req.body.username})
+    db.User.findOne({username: req.body.author})
     .then(u => {
         db.Recipe.create({
             title: req.body.title,
@@ -37,8 +37,10 @@ router.post("/new", (req, res) => {
             instructions: req.body.instructions,
             description: req.body.description
         })
-        .then(res.redirect("/"))
-    })  
+    })
+    .then(r => {
+        console.log(r)
+    })
 })
 
 
