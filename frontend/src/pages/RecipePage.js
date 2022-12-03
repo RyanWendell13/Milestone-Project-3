@@ -43,7 +43,7 @@ function RecipePage(){
     }
 
     function DeleteButton(){
-        if(currentUser && currentUser.username == data.author.username){
+        if(currentUser && currentUser.username == data.author){
             return(
                 <button id="IconButton" onClick={HandleDelete}>
                     <Dash/>
