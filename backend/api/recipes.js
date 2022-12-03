@@ -6,7 +6,6 @@ router.get('/:id', (req, res) => {
     .then(async recipe => {
         let user = await db.User.findById(recipe.author)
         let temp = {title: recipe.title, author: user.username, description: recipe.description, image: recipe.image, ingredients: recipe.ingredients, equipment: recipe.equipment, instructions: recipe.instructions}
-        console.log(temp)
         res.json(temp)
     })
     .catch(err => {
