@@ -3,11 +3,25 @@ const db = require("../models")
 const bcrypt = require('bcrypt')
 
 router.post('/new', async(req, res)=>{
-    const user = await db.User.create({
-        username: req.body.username,
-        password: await bcrypt.hash(req.body.password,10)
+    db.User.find({username: req.body.username})
+    .then(async r => {
+        console.log(r)
+        if(!r){
+            console.log("CREATING")
+            const user = await db.User.create({
+                username: req.body.username,
+                password: await bcrypt.hash(req.body.password,10)
+            })
+
+            res.json({})
+        }
+        else{
+
+            console.log("BREAKING")
+            res.json({message: 'username already in use'})
+        }
+        
     })
-    res.json(user)
 })
 
 
