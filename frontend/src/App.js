@@ -10,6 +10,7 @@ import CurrentUserProvider from './contexts/CurrentUser';
 import './css/App.css';
 
 function App() {
+  document.title = 'RecipeBook'
   return (
     <CurrentUserProvider>
       <Router>
