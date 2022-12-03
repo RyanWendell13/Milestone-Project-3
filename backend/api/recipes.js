@@ -3,8 +3,8 @@ const db = require("../models")
 
 
 router.get('/:id', (req, res) => {
-    db.Recipe.find(req.params.id)
-    .populate('recipes')
+    db.Recipe.findById(req.params.id)
+    .populate("author")
     .then(recipe => {
         res.json(recipe)
     })

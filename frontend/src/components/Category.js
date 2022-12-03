@@ -10,7 +10,7 @@ function Category(props){
             <div id="RecipeList">
                 {props.recipes.length == 0 ? "No Recipe" : props.recipes.map((r,i) => {
                     return(
-                        <a href="/recipe/1" key={i}>
+                        <a href={`/recipe/${r._id}`} key={i}>
                             <div id="Recipe">
                                 <img src={r.image} alt={r.title}/>
                                 <p>{r.title}</p>

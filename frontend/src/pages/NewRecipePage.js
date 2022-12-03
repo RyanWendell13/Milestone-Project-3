@@ -9,7 +9,7 @@ function NewRecipePage(){
     const {category} = useParams()
 
     const [categories, setCategories] = useState()
-
+    
     useEffect(() => {
         fetch("/api/categories")
         .then(res => res.json())
