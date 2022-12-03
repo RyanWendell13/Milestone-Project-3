@@ -11,6 +11,7 @@ function UserPage(){
         username: "",
         password: ""
     })
+    const [loginMessage, setLoginMessage] = useState()
 
     return(
         <>
@@ -20,9 +21,9 @@ function UserPage(){
                     <h2>SignUp</h2>
                     <form onSubmit={HandleSignupSubmit}>
                         <label>Username</label>
-                        <input required type="text" onChange={e => {setSignUp({...signUp,username: e.target.value })}}/>
+                        <input required type="text" placeholder="Enter Username" onChange={e => {setSignUp({...signUp,username: e.target.value })}}/>
                         <label>Password</label>
-                        <input required type="password" onChange={e => {setSignUp({...signUp,password: e.target.value })}}/>
+                        <input required type="password" placeholder="Enter Password" onChange={e => {setSignUp({...signUp,password: e.target.value })}}/>
                         <input required type="submit" id="Submit"/>
                     </form>
                 </div>
@@ -33,9 +34,10 @@ function UserPage(){
                     <h2>Login</h2>
                     <form onSubmit={HandleLoginSubmit}>
                         <label>Username</label>
-                        <input required type="text" onChange={e => {setLogin({...login,username: e.target.value })}}/>
+                        <input required type="text" placeholder="Enter Username" onChange={e => {setLogin({...login,username: e.target.value })}}/>
                         <label>Password</label>
-                        <input required type="password" onChange={e => {setLogin({...login,password: e.target.value })}}/>
+                        <input required type="password" placeholder="Enter Password" onChange={e => {setLogin({...login,password: e.target.value })}}/>
+                        {loginMessage ? <p id="ErrorMessage">{loginMessage}</p> : <></>}
                         <input required type="submit" id="Submit"/>
                     </form>
                 </div>
@@ -53,17 +55,34 @@ function UserPage(){
             },
             body: JSON.stringify(signUp)
         })
-
-
-    }
-    async function HandleLoginSubmit(e){
-        e.preventDefault()
         await fetch("/api/users/authenication", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
             },
+            body: JSON.stringify(signUp)
+        })
+        window.location.href = '/';
+
+    }
+    async function HandleLoginSubmit(e){
+        e.preventDefault()
+        fetch("/api/users/authenication", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(login)
+        }).then(async m => {
+            let response = await m.json()
+            console.log(response)
+            if (!response.message){
+                console.log("Redirect")
+                window.location.href = '/';
+            }
+            else{
+                setLoginMessage(response.message)
+            }
         })
         
     }

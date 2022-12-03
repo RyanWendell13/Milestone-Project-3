@@ -1,29 +1,51 @@
 import React, { useContext, useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
 import { Dash } from "react-bootstrap-icons"
 import {CurrentUser} from '../contexts/CurrentUser'
 
-function RecipePage({recipe}){
+function RecipePage(){
     const {currentUser} = useContext(CurrentUser)
 
+    const {id} = useParams()
 
-    let r = {
-        title: "Bread",
-        author: "temp_username",
-        image: "../../Bread.jpg",
-        description: "description description description description description description description description description description description description description description description description description description description description description description description description ",
-        ingredients: ["3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour", "3/4 cup of flour" ,"3/4 cup of flour", "3/4 cup of flour"],
-        equipment: ["bowl","oven"],
-        instructions: ["add 3/4 cup of flower to bowl", "bake 300F",]
+    const [data, setData] = useState()
+
+    useEffect(() => {
+        fetch(`/api/recipes/${id}`)
+        .then(res => res.json())
+        .then(r => {
+            setData(r)
+        })
+    }, []);
+
+    return(
+        <>
+            <NavBar/>
+            <div id="RecipeInfo">
+                    <h2>{!data ? "Loading...": data.title}</h2>
+                    {!data ? "Loading...": DeleteButton(currentUser)}
+                    <p id="Author"> Recipe by {!data ? "Loading...": data.author.username}</p>
+                    <p id="Description">{!data ? "Loading...": data.description}</p>
+                    <img src={!data ? "Loading...": data.image} alt={!data ? "Loading...": data.title}/>
+                    {!data ? "Loading...": ListIngredients(data.ingredients)}
+                    {!data ? "Loading...": ListEquipment(data.equipment)}
+                    {!data ? "Loading...": ListInstructions(data.instructions)}
+            </div>
+        </>
+    )
+
+    function HandleDelete(){
+        fetch(`/api/recipes/${id}/delete`,{
+            method: "POST"
+        })
+        window.location.href = "/";
     }
-    
-    const [data, setData] = useState(r)
-
 
     function DeleteButton(){
-        if(currentUser && currentUser.username == data.author){
+        if(currentUser && currentUser.username == data.author.username){
             return(
-                <button id="IconButton">
+                <button id="IconButton" onClick={HandleDelete}>
                     <Dash/>
                 </button>
             )
@@ -72,22 +94,6 @@ function RecipePage({recipe}){
             </>
         )
     }
-
-    return(
-        <>
-            <NavBar/>
-            <div id="RecipeInfo">
-                <h2>{data.title}</h2>
-                {DeleteButton(currentUser, recipe)}
-                <p id="Author"> Recipe by {data.author}</p>
-                <p id="Description">{data.description}</p>
-                <img src={data.image} alt={data.title}/>
-                {ListIngredients(data.ingredients)}
-                {ListEquipment(data.equipment)}
-                {ListInstructions(data.instructions)}
-            </div>
-        </>
-    )
 }
 
 

@@ -1,10 +1,9 @@
 const router = require('express').Router()
 const db = require("../models")
 
-
 router.get('/:id', (req, res) => {
-    db.Recipe.find(req.params.id)
-    .populate('recipes')
+    db.Recipe.findById(req.params.id)
+    .populate("author")
     .then(recipe => {
         res.json(recipe)
     })
@@ -14,32 +13,37 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+router.post('/:id/delete', (req, res) => {
     db.Recipe.findByIdAndDelete(req.params.id)
     .then(() => {
-        res.redirect("/")
+        res.json(req.params.id)
     })
     .catch(err => {
         console.log('err', err)
-        // res.render('error404')
     })
 })
 
-router.post("/new", (req, res) => {
-    db.User.findOne({username: req.body.author})
+router.post("/new", async (req, res) => {
+    let categories = await db.Category.find({title: {$in: req.body.categories}})
+    categories = categories.map(c => {
+        return c._id;
+    })
+    
+    db.User.findOne({username: req.currentUser.username})
     .then(u => {
         db.Recipe.create({
             title: req.body.title,
             author: u._id,
             image: req.body.image,
+            categories: categories,
             ingredients: req.body.ingredients,
             equipment: req.body.equipment,
             instructions: req.body.instructions,
             description: req.body.description
         })
-    })
-    .then(r => {
-        console.log(r)
+        .then(r => {
+            res.redirect("/")
+        })
     })
 })
 

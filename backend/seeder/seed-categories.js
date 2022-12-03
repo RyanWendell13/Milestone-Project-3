@@ -1,23 +1,17 @@
 const db = require('../models')
 
 db.Category.create([{
-    title: "Breakfast",
-    recipes: []
+    title: "Breakfast"
 },{
-    title: "Lunch",
-    recipes: []
+    title: "Lunch"
 },{
-    title: "Dinner",
-    recipes: []
+    title: "Dinner"
 },{
-    title: "Dessert",
-    recipes: []
+    title: "Dessert"
 },{
-    title: "Vegitarian",
-    recipes: []
+    title: "Vegan"
 },{
-    title: "Miscellaneous",
-    recipes: []
+    title: "Miscellaneous"
 }]).then(()=> {
     console.log('Success')
     process.exit()

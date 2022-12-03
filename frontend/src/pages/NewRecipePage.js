@@ -2,12 +2,10 @@ import React from "react"
 import NavBar from "../components/NavBar"
 import {useState, useContext, useEffect} from "react"
 import ListInput from "../components/ListInput"
-import {CurrentUser} from "../contexts/CurrentUser"
+import { CurrentUser } from "../contexts/CurrentUser"
 import { useParams } from "react-router-dom"
 
 function NewRecipePage(){
-
-    const {currentUser} = useContext(CurrentUser)
     const {category} = useParams()
 
     const [categories, setCategories] = useState()
@@ -35,7 +33,8 @@ function NewRecipePage(){
         setRecipe({...recipe, categories: [category]})
         
     },[]);
-    console.log(currentUser)
+
+    const {currentUser} = useContext(CurrentUser)
     return(
         <>
             <NavBar/>
@@ -44,28 +43,28 @@ function NewRecipePage(){
                     <div className="form-column">
                         <div className="input-wrap">
                             <label>Title</label>
-                            <input required className="input-field" type="text" name="title" onChange={e => setRecipe({ ...recipe, title: e.target.value})}/>
+                            <input required className="input-field" placeholder="Enter Recipe Title" type="text" name="title" onChange={e => setRecipe({ ...recipe, title: e.target.value})}/>
                         </div>
                          <div className="input-wrap">
                             <label>Author</label>
-                            <input className="input-field" type="text" value={currentUser.username} disabled/>
+                            <input className="input-field" type="text" value={!currentUser ? "Loading...": currentUser.username} disabled/>
                         </div>
 
                         <div className="input-wrap">
                             <label>Image</label>
-                            <input required className="input-field" type="text" name="image" onChange={e => setRecipe({...recipe, image: e.target.value})}/>
+                            <input required className="input-field" placeholder="Enter Image URL" type="text" name="image" onChange={e => setRecipe({...recipe, image: e.target.value})}/>
                         </div>
                         <div className="input-wrap">
                             <label>Description</label>
-                            <textarea required className="short-desc" name="description" onChange={e => setRecipe({...recipe, description: e.target.value})}/>
+                            <textarea required className="short-desc" placeholder="Enter Description" name="description" onChange={e => setRecipe({...recipe, description: e.target.value})}/>
                         </div>
                         {CategoryInput(categories, setRecipe, recipe)}
                     </div>
                     
                     <div className="form-column">
-                        <ListInput field ={"ingredients"} data ={recipe} set ={setRecipe} label ={"Ingredients"} formtype ="text"/>
-                        <ListInput field ={"equipment"} data ={recipe} set ={setRecipe} label ={"Equipment"} formtype ="text"/>
-                        <ListInput field ={"instructions"} data ={recipe} set ={setRecipe} label ={"Instructions"} formtype ="textarea"/>
+                        <ListInput field ={"ingredients"} data ={recipe} set ={setRecipe} label ={"Ingredients"} formtype ="text" placeholdertext = "Enter An Ingredient"/>
+                        <ListInput field ={"equipment"} data ={recipe} set ={setRecipe} label ={"Equipment"} formtype ="text" placeholdertext = "Enter A Piece Of Equipment"/>
+                        <ListInput field ={"instructions"} data ={recipe} set ={setRecipe} label ={"Instructions"} formtype ="textarea" placeholdertext = "Enter A Step"/>
                         <input className="add-recipe-btn" type="submit"/>
                     </div>
                 </form>
@@ -109,7 +108,9 @@ function NewRecipePage(){
     function HandleSubmit(e){
         e.preventDefault()
         if(recipe.categories.length == 0){
-            setRecipe({...recipe, categories: ["Miscellaneous"]})
+            let temp = recipe.categories
+            temp.push("Miscellaneous")
+            setRecipe({...recipe, categories: temp})
         }
         fetch("/api/recipes/new", {
             method: "POST",
@@ -118,6 +119,8 @@ function NewRecipePage(){
             },
             body: JSON.stringify(recipe)
         })
+
+        window.location.href = "/";
     }
 }
 

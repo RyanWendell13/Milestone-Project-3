@@ -1,10 +1,8 @@
 const router = require('express').Router()
 const db = require("../models")
 const bcrypt = require('bcrypt')
-const currentUser = require('../middleware/CurrentUser')
 
 router.post('/new', async(req, res)=>{
-    console.log(req.body)
     const user = await db.User.create({
         username: req.body.username,
         password: await bcrypt.hash(req.body.password,10)
@@ -16,14 +14,12 @@ router.post('/new', async(req, res)=>{
 router.post('/authenication', async (req, res) => {
     let user = await db.User.findOne({username: req.body.username})
     if(!user || !await bcrypt.compare(req.body.password, user.password)){
-        
-        res.json({
-            message: 'wrong user info'
-        })
+        res.json({message: 'wrong user info'})
     }
     else{
+        console.log("Correct")
         req.session._id = user._id
-        res.redirect("/")
+        res.json({})
     }
 })
 

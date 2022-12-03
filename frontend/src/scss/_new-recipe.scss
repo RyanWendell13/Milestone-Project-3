@@ -82,7 +82,7 @@
     .add-input{
         width: 100%;
         height: 30px;
-        color: set-text-color($form-primary-color);
+        color: set-text-color($secondary-color);
         
     }
     margin-bottom: 20px;
@@ -96,17 +96,6 @@
     width: 300px;
     margin-bottom: 30px;
  }
-
- .ingredients{
-    outline: none;
-    font-size: 15px;
-    border-radius: 7px ;
-    padding-left: 5px;
-    border: 1px solid #894915;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease
-}
-
  .input-field{
     height: 20px;
     width:100%;
@@ -158,27 +147,12 @@
 
 }
 
-.add-ingredient-list{
-    margin-top: 10px;
-    height: 80px;
-    overflow-y: auto;
-    background-color: $secondary-color;
-    color: set-text-color($secondary-color);
-}
-
-
 .add-input{
-    background: transparent;
-    border: 0;
-    outline: none;
-    color: inherit;
+    padding-left: 5px;
     font-size: inherit;
-    border-bottom: 2px solid currentColor;
-    transition: border-bottom 150ms ease-in;
     width: 100%;
     height: 30px;
-    color: set-text-color($form-primary-color);
-  
+    color: set-text-color($secondary-color);
 }
 
 .add-dir , .add-ing {
@@ -187,7 +161,7 @@
 .sub-ingredient-submit-btn{
     cursor: pointer;
     background-color: transparent;
-    color: set-text-color($secondary-color);
+    color: set-text-color($form-primary-color);
     border: none;
     
     font-size: 0.8rem;
@@ -200,6 +174,14 @@
     }
 }
 
+.add-ingredient-list{
+    margin-top: 10px;
+    height: 80px;
+    overflow-y: auto;
+    color: set-text-color($primary-color);
+    border-top: solid $secondary-color ;
+    border-bottom: solid $secondary-color;
+}
 
 .add-ingredient-submit-btn ,.add-direction-submit-btn {
     cursor: pointer;
@@ -217,27 +199,10 @@
     }
 }
 
-.add-input:focus {
-  border-bottom-width: 4px;
-  border-color: $tertiary-color;
+label{
+    font-size: large;
 }
 
-.add-input::placeholder {
-  font-size: 12px;
-}
-
-.add-input:focus::placeholder{
-  opacity: .3;
- 
-}
-.add-ingedient-list{
-    list-style-type: circle;
-}
-.addform{
-    label{
-        font-size: large;
-    }
-}
 @media screen and (max-width: 800px) {
     .box{
         width: 350px;
