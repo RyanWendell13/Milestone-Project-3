@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const db = require("../models")
 
-
 router.get('/:id', (req, res) => {
     db.Recipe.findById(req.params.id)
     .populate("author")
@@ -14,19 +13,17 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+router.post('/:id/delete', (req, res) => {
     db.Recipe.findByIdAndDelete(req.params.id)
     .then(() => {
-        res.redirect("/")
+        res.json(req.params.id)
     })
     .catch(err => {
         console.log('err', err)
-        // res.render('error404')
     })
 })
 
 router.post("/new", async (req, res) => {
-    console.log(req.currentUser)
     let categories = await db.Category.find({title: {$in: req.body.categories}})
     categories = categories.map(c => {
         return c._id;
@@ -44,8 +41,10 @@ router.post("/new", async (req, res) => {
             instructions: req.body.instructions,
             description: req.body.description
         })
+        .then(r => {
+            res.redirect("/")
+        })
     })
-    
 })
 
 

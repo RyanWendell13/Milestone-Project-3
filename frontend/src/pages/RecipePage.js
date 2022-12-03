@@ -35,10 +35,13 @@ function RecipePage(){
         </>
     )
 
-
     function HandleDelete(){
-
+        fetch(`/api/recipes/${id}/delete`,{
+            method: "POST"
+        })
+        window.location.href = "/";
     }
+
     function DeleteButton(){
         if(currentUser && currentUser.username == data.author.username){
             return(

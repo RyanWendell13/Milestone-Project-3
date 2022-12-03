@@ -3,7 +3,6 @@ const db = require("../models")
 const bcrypt = require('bcrypt')
 
 router.post('/new', async(req, res)=>{
-    console.log(req.body)
     const user = await db.User.create({
         username: req.body.username,
         password: await bcrypt.hash(req.body.password,10)

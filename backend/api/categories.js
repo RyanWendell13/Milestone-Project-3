@@ -11,8 +11,6 @@ router.get('/', (req,res) => {
                 recipes: recipes
             }
         })).then(categories => {
-            console.log("*** CATEGORIES ***")
-            console.log(categories)
             res.json(categories)
         })
         

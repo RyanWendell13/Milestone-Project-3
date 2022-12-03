@@ -11,7 +11,6 @@ function ListInput(props){
                 <div className="list-input-container">
                     {CreateInput(props.formtype, setInputValue,inputValue)}
                     <button className="add-direction-submit-btn" onClick={e =>{
-                        console.log(inputValue)
                         AddInputValue(e, props, inputValue, setInputValue)
                     }}>
                         <Plus/>

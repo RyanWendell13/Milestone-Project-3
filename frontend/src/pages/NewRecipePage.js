@@ -9,7 +9,7 @@ function NewRecipePage(){
     const {category} = useParams()
 
     const [categories, setCategories] = useState()
-    
+
     useEffect(() => {
         fetch("/api/categories")
         .then(res => res.json())
@@ -35,7 +35,6 @@ function NewRecipePage(){
     },[]);
 
     const {currentUser} = useContext(CurrentUser)
-    console.log(currentUser)
     return(
         <>
             <NavBar/>
@@ -109,7 +108,9 @@ function NewRecipePage(){
     function HandleSubmit(e){
         e.preventDefault()
         if(recipe.categories.length == 0){
-            setRecipe({...recipe, categories: ["Miscellaneous"]})
+            let temp = recipe.categories
+            temp.push("Miscellaneous")
+            setRecipe({...recipe, categories: temp})
         }
         fetch("/api/recipes/new", {
             method: "POST",
@@ -118,6 +119,8 @@ function NewRecipePage(){
             },
             body: JSON.stringify(recipe)
         })
+
+        window.location.href = "/";
     }
 }
 
