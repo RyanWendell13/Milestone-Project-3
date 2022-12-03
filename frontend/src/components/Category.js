@@ -8,7 +8,7 @@ function Category(props){
     function ListRecipes(props){
         return(
             <div id="RecipeList">
-                {!props.recipes ? "No Recipe" : props.recipes.map((r,i) => {
+                {props.recipes.length == 0 ? "No Recipe" : props.recipes.map((r,i) => {
                     return(
                         <a href="/recipe/1" key={i}>
                             <div id="Recipe">
