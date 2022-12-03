@@ -11,5 +11,4 @@ async function currentUser(req, res, next) {
         next()
     }
 }
-
 module.exports = currentUser
