@@ -13,17 +13,20 @@ function UserPage(){
     })
     const [loginMessage, setLoginMessage] = useState()
 
+    const [signUpMessage, setSignUpMessage] = useState()
+
     return(
         <>
             <NavBar/>
             <div id="UserPanel">
-                <div id="SignUp">
+                <div id="Sign Up">
                     <h2>SignUp</h2>
                     <form onSubmit={HandleSignupSubmit}>
                         <label>Username</label>
                         <input required type="text" placeholder="Enter Username" onChange={e => {setSignUp({...signUp,username: e.target.value })}}/>
                         <label>Password</label>
                         <input required type="password" placeholder="Enter Password" onChange={e => {setSignUp({...signUp,password: e.target.value })}}/>
+                        {signUpMessage ? <p id="ErrorMessage">{signUpMessage}</p> : <></>}
                         <input required type="submit" id="Submit"/>
                     </form>
                 </div>
@@ -48,21 +51,30 @@ function UserPage(){
 
     async function HandleSignupSubmit(e){
         e.preventDefault()
-        await fetch("/api/users/new", {
+        fetch("/api/users/new", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(signUp)
+        }).then(async m => {
+            let response = await m.json()
+            if(!response.message){
+                await fetch("/api/users/authenication", {
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(signUp)
+                })
+                window.location.href = '/';
+            }
+            else{
+                setSignUpMessage(response.message)
+            }
+            
         })
-        await fetch("/api/users/authenication", {
-            method: "POST",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(signUp)
-        })
-        window.location.href = '/';
+        
 
     }
     async function HandleLoginSubmit(e){

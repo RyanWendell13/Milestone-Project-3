@@ -3,9 +3,11 @@ const db = require("../models")
 
 router.get('/:id', (req, res) => {
     db.Recipe.findById(req.params.id)
-    .populate("author")
-    .then(recipe => {
-        res.json(recipe)
+    .then(async recipe => {
+        let user = await db.User.findById(recipe.author)
+        let temp = {title: recipe.title, author: user.username, description: recipe.description, image: recipe.image, ingredients: recipe.ingredients, equipment: recipe.equipment, instructions: recipe.instructions}
+        console.log(temp)
+        res.json(temp)
     })
     .catch(err => {
         console.log('err', err)

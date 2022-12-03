@@ -25,7 +25,7 @@ function RecipePage(){
             <div id="RecipeInfo">
                     <h2>{!data ? "Loading...": data.title}</h2>
                     {!data ? "Loading...": DeleteButton(currentUser)}
-                    <p id="Author"> Recipe by {!data ? "Loading...": data.author.username}</p>
+                    <p id="Author"> Recipe by {!data ? "Loading...": data.author}</p>
                     <p id="Description">{!data ? "Loading...": data.description}</p>
                     <img src={!data ? "Loading...": data.image} alt={!data ? "Loading...": data.title}/>
                     {!data ? "Loading...": ListIngredients(data.ingredients)}
