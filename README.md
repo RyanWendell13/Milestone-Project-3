@@ -24,6 +24,7 @@ In the backend folder create a .env file and add the following.
     CORS_ORIGIN = (Set to frontend url)
 
 run node backend/seeder/seed-categories.js 
+
 run npm start
 
 ## API
