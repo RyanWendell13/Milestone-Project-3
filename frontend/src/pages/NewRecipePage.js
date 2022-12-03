@@ -43,7 +43,7 @@ function NewRecipePage(){
                     <div className="form-column">
                         <div className="input-wrap">
                             <label>Title</label>
-                            <input required className="input-field" type="text" name="title" onChange={e => setRecipe({ ...recipe, title: e.target.value})}/>
+                            <input required className="input-field" placeholder="Enter Recipe Title" type="text" name="title" onChange={e => setRecipe({ ...recipe, title: e.target.value})}/>
                         </div>
                          <div className="input-wrap">
                             <label>Author</label>
@@ -52,19 +52,19 @@ function NewRecipePage(){
 
                         <div className="input-wrap">
                             <label>Image</label>
-                            <input required className="input-field" type="text" name="image" onChange={e => setRecipe({...recipe, image: e.target.value})}/>
+                            <input required className="input-field" placeholder="Enter Image URL" type="text" name="image" onChange={e => setRecipe({...recipe, image: e.target.value})}/>
                         </div>
                         <div className="input-wrap">
                             <label>Description</label>
-                            <textarea required className="short-desc" name="description" onChange={e => setRecipe({...recipe, description: e.target.value})}/>
+                            <textarea required className="short-desc" placeholder="Enter Description" name="description" onChange={e => setRecipe({...recipe, description: e.target.value})}/>
                         </div>
                         {CategoryInput(categories, setRecipe, recipe)}
                     </div>
                     
                     <div className="form-column">
-                        <ListInput field ={"ingredients"} data ={recipe} set ={setRecipe} label ={"Ingredients"} formtype ="text"/>
-                        <ListInput field ={"equipment"} data ={recipe} set ={setRecipe} label ={"Equipment"} formtype ="text"/>
-                        <ListInput field ={"instructions"} data ={recipe} set ={setRecipe} label ={"Instructions"} formtype ="textarea"/>
+                        <ListInput field ={"ingredients"} data ={recipe} set ={setRecipe} label ={"Ingredients"} formtype ="text" placeholdertext = "Enter An Ingredient"/>
+                        <ListInput field ={"equipment"} data ={recipe} set ={setRecipe} label ={"Equipment"} formtype ="text" placeholdertext = "Enter A Piece Of Equipment"/>
+                        <ListInput field ={"instructions"} data ={recipe} set ={setRecipe} label ={"Instructions"} formtype ="textarea" placeholdertext = "Enter A Step"/>
                         <input className="add-recipe-btn" type="submit"/>
                     </div>
                 </form>

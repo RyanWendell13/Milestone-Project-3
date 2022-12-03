@@ -14,13 +14,12 @@ router.post('/new', async(req, res)=>{
 router.post('/authenication', async (req, res) => {
     let user = await db.User.findOne({username: req.body.username})
     if(!user || !await bcrypt.compare(req.body.password, user.password)){
-        res.json({
-            message: 'wrong user info'
-        })
+        res.json({message: 'wrong user info'})
     }
     else{
+        console.log("Correct")
         req.session._id = user._id
-        res.json(user)
+        res.json({})
     }
 })
 

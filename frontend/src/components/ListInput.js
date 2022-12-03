@@ -9,7 +9,7 @@ function ListInput(props){
             <div className="addform">
                 <label>{props.label}</label>
                 <div className="list-input-container">
-                    {CreateInput(props.formtype, setInputValue,inputValue)}
+                    {CreateInput(props.formtype, setInputValue,inputValue, props.placeholdertext)}
                     <button className="add-direction-submit-btn" onClick={e =>{
                         AddInputValue(e, props, inputValue, setInputValue)
                     }}>
@@ -23,12 +23,12 @@ function ListInput(props){
     )
 }
 
-function CreateInput(formtype, setInputValue, inputValue){
+function CreateInput(formtype, setInputValue, inputValue, placeholdertext){
     if(formtype == "textarea"){
-        return(<textarea value = {inputValue} className="add-input" onChange={e => setInputValue(e.target.value)}/>)
+        return(<textarea placeholder={placeholdertext} value = {inputValue} className="add-input" onChange={e => setInputValue(e.target.value)}/>)
     }
     else{
-        return(<input value = {inputValue} className="add-input" type={formtype} onChange={e => setInputValue(e.target.value)}/>)
+        return(<input placeholder={placeholdertext} value = {inputValue} className="add-input" type={formtype} onChange={e => setInputValue(e.target.value)}/>)
     }
 }
 
