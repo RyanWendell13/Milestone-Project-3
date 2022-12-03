@@ -5,9 +5,7 @@ const bcrypt = require('bcrypt')
 router.post('/new', async(req, res)=>{
     db.User.find({username: req.body.username})
     .then(async r => {
-        console.log(r)
-        if(!r){
-            console.log("CREATING")
+        if(r.length == 0){
             const user = await db.User.create({
                 username: req.body.username,
                 password: await bcrypt.hash(req.body.password,10)
@@ -16,8 +14,6 @@ router.post('/new', async(req, res)=>{
             res.json({})
         }
         else{
-
-            console.log("BREAKING")
             res.json({message: 'username already in use'})
         }
         
@@ -31,7 +27,6 @@ router.post('/authenication', async (req, res) => {
         res.json({message: 'wrong user info'})
     }
     else{
-        console.log("Correct")
         req.session._id = user._id
         res.json({})
     }
