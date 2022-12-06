@@ -24,7 +24,7 @@ function ListInput(props){
 }
 
 function CreateInput(formtype, setInputValue, inputValue, placeholdertext){
-    if(formtype == "textarea"){
+    if(formtype === "textarea"){
         return(<textarea placeholder={placeholdertext} value = {inputValue} className="add-input" onChange={e => setInputValue(e.target.value)}/>)
     }
     else{
