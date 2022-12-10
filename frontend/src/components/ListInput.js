@@ -34,10 +34,12 @@ function CreateInput(formtype, setInputValue, inputValue, placeholdertext){
 
 function AddInputValue(e, props, inputValue, setInputValue){
     e.preventDefault()
-    let temp = {...props.data}
-    temp[props.field].push(inputValue)
-    props.set(temp)
-    setInputValue("")
+    if(/\S/.test(inputValue)){
+        let temp = {...props.data}
+        temp[props.field].push(inputValue)
+        props.set(temp)
+        setInputValue("")
+    }
 }
 
 function CreateList(props){
